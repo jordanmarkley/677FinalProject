@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace _677FinalProject
 {
-    public partial class Form1 : Form
+    public partial class HRRepForm : Form
     {
-        public Form1()
+        public HRRepForm()
         {
             InitializeComponent();
+        }
+
+        //open the selected request
+        private void viewRequestButton_Click(object sender, EventArgs e)
+        {
+            HRViewRequestForm hrv = new HRViewRequestForm();
+            hrv.ShowDialog();
         }
     }
 }
