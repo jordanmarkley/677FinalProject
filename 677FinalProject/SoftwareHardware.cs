@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace _677FinalProject
 {
 
-    //this is a comment by riley
     class SoftwareHardware
     {
         private int itemID;
