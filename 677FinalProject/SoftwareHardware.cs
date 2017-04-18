@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace _677FinalProject
 {
 
-    //this is a comment by riley
     class SoftwareHardware
     {
         private int itemID;
@@ -17,7 +16,7 @@ namespace _677FinalProject
         public SoftwareHardware(int id, string desc, double price)
         {
             itemID = id;
-            description = desc;C:\Users\Riley\Documents\Class Stuff\MIS 667\final project\677FinalProject\SoftwareHardware.cs
+            description = desc;
             itemPrice = price;
         }
 
