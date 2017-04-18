@@ -17,7 +17,7 @@ namespace _677FinalProject
         public SoftwareHardware(int id, string desc, double price)
         {
             itemID = id;
-            description = desc;C:\Users\Riley\Documents\Class Stuff\MIS 667\final project\677FinalProject\SoftwareHardware.cs
+            description = desc;
             itemPrice = price;
         }
 
