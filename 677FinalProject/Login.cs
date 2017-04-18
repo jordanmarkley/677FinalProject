@@ -7,7 +7,7 @@
  * Jordan Markley-Kubias
  * 
  * Class: Login
- * hi
+ * 
  *      Class to keep track of the employee's employee id and password that is used to log in.
  *      Will secure the connection to the sql database in order to check employee's login credentials
  *      and what their title is so that they are logged into the appropriate form.
