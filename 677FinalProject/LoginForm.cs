@@ -104,10 +104,12 @@ namespace _677FinalProject
             newguys = theHomies.getJson();
 
             //ths establishes a connection to the database
-            SqlConnection cnn = new SqlConnection();
-            DBcnn database = new DBcnn(cnn);
-            database.connect(null);
+            SqlConnection pushn = new SqlConnection();
+            DBcnn daterbase = new DBcnn(pushn);
+            daterbase.connect(null);
 
+            //need to add newhire columns to the database
+            //sql statement for insert the newhires from newhire list into the database
 
             
             

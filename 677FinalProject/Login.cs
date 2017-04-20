@@ -74,5 +74,10 @@ namespace _677FinalProject
                 h.ShowDialog();
             }
         }
+
+        public void pushData()
+        {
+
+        }
     }
 }
