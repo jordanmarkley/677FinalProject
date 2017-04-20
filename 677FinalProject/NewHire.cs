@@ -15,6 +15,12 @@ namespace _677FinalProject
 {
     class NewHire
     {
+        //constructor
+        public NewHire()
+        {
+
+        }
+
         //initializes a counter for the number of employees being added
         private int icount = 0;
         //creates a list of employees

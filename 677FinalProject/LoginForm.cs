@@ -93,6 +93,24 @@ namespace _677FinalProject
                     MessageBox.Show("Unexpected error:" + ex.Message);
                 }
             }
+
+            //this bit of the code will add the items in the json file retrieved from the AWS to our database
+
+            //create the list that the newhires will be passed to
+            List<Employee> newguys = new List<Employee>();
+
+            //create a newhire to get the newhire information from then assigns the it to the newguys list of employees
+            NewHire theHomies = new NewHire();
+            newguys = theHomies.getJson();
+
+            //ths establishes a connection to the database
+            SqlConnection cnn = new SqlConnection();
+            DBcnn database = new DBcnn(cnn);
+            database.connect(null);
+
+
+            
+            
         }
     }
 }
