@@ -24,6 +24,7 @@ namespace _677FinalProject
             backgroundStatus = bgstat;
         }
 
+        //getter/setter for first name
         public string firstN
         {
             get
@@ -33,6 +34,58 @@ namespace _677FinalProject
             set
             {
                 firstName = value;
+            }
+        }
+
+        //getter/setter for last name
+        public string lastN
+        {
+            get
+            {
+                return lastName;
+            }
+            set
+            {
+                lastName = value;
+            }
+        }
+
+        //getter/setter for gender
+        public string gander
+        {
+            get
+            {
+                return gender;
+            }
+            set
+            {
+               gender = value;
+            }
+        }
+
+        //getter/setter for date of birth
+        public string bday
+        {
+            get
+            {
+                return dOB;
+            }
+            set
+            {
+                dOB = value;
+            }
+        }
+
+        //getter/setter for background status
+        public string CBGB
+        {
+            get
+            {
+                return backgroundStatus;
+            }
+            set
+            {
+                backgroundStatus = value;
             }
         }
     }
