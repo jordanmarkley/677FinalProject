@@ -90,6 +90,7 @@
     <Compile Include="ManagerViewRequestForm.Designer.cs">
       <DependentUpon>ManagerViewRequestForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewHire.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestForm.cs">
