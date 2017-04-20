@@ -31,13 +31,26 @@ namespace _677FinalProject
             da.Fill(dt);
             foreach (DataRow dr in dt.Rows)
             {
-                int id = (int)dr["ITEM_ID"];
+                int id = Convert.ToInt32(dr["ITEM_ID"]);
                 string descripotion = dr["DESCRIPTION"].ToString();
-                double price = (double)dr["UNIT_PRICE"];
+                double price = Convert.ToDouble(dr["UNIT_PRICE"]);
 
                 SoftwareHardware item = new SoftwareHardware(id, descripotion, price);
                 itemList.Add(item);
             }
+
+            foreach(SoftwareHardware item in itemList)
+            {
+                int id = item.ItemID;
+                string desc = item.Description;
+                double price = item.Price;
+                ListViewItem i = new ListViewItem(id.ToString());
+                i.SubItems.Add(desc);
+                i.SubItems.Add(price.ToString());
+                requestListView.Items.Add(i);
+            }
+
+            
         }
     }
 }

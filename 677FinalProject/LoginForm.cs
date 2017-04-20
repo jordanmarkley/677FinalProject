@@ -112,5 +112,11 @@ namespace _677FinalProject
             
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RequestForm r = new RequestForm();
+            r.ShowDialog();
+        }
     }
 }
