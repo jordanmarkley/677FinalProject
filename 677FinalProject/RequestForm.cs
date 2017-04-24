@@ -20,9 +20,13 @@ namespace _677FinalProject
             FillList();
         }
 
+        //Variables
         private RequestItemsForm ri = new RequestItemsForm();
         private List<SoftwareHardware> itemList = new List<SoftwareHardware>();
+        private int counter = 0;
 
+        //Fill the List view with the updated information in the SOFTWAREHARDWARE table in the
+        //database each time the form is loaded so that the most recent info can be loaded each time.
         public void FillList()
         {
             SqlConnection conn = new SqlConnection("Data Source=10.135.85.168;Initial Catalog=Group5;User ID=Group5;Password=Grp52116%");
@@ -47,22 +51,30 @@ namespace _677FinalProject
                 double price = item.Price;
                 ListViewItem i = new ListViewItem(id.ToString());
                 i.SubItems.Add(desc);
-                i.SubItems.Add(price.ToString());
+                i.SubItems.Add(price.ToString("C2"));
                 requestListView.Items.Add(i);
             }
 
             
         }
 
+        //Add an item to request items list view
         private void addItemButton_Click(object sender, EventArgs e)
         {
+            //ensures that a fresh, new form is loaded
+            if (counter == 0)
+            {
+                ri.Show();
+                counter++;
+            }
 
-            ri.Show();
             foreach(ListViewItem i in requestListView.SelectedItems)
             {
                 ri.RequestItemsListView.Items.Add((ListViewItem)i.Clone());
             }
-            this.Close();
+
+            //update totals
+            ri.updateTotals();
         }
     }
 }

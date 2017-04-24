@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuildTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuildTeam.Designer.cs">
+      <DependentUpon>BuildTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuildTeamViewRequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuildTeamViewRequestForm.Designer.cs">
+      <DependentUpon>BuildTeamViewRequestForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBcnn.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="GROUP5DataSetUSE.Designer.cs">
@@ -93,6 +105,7 @@
     <Compile Include="NewHire.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Request.cs" />
     <Compile Include="RequestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +131,12 @@
     <Compile Include="SupervisorViewRequestForm.Designer.cs">
       <DependentUpon>SupervisorViewRequestForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BuildTeam.resx">
+      <DependentUpon>BuildTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuildTeamViewRequestForm.resx">
+      <DependentUpon>BuildTeamViewRequestForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HRRepForm.resx">
       <DependentUpon>HRRepForm.cs</DependentUpon>
     </EmbeddedResource>

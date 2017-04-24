@@ -9,17 +9,22 @@ namespace _677FinalProject
 
     class SoftwareHardware
     {
+        //Varbiables
         private int itemID;
         private string description;
         private double itemPrice;
+        private bool complete;
 
+        //Constructor
         public SoftwareHardware(int id, string desc, double price)
         {
             itemID = id;
             description = desc;
             itemPrice = price;
+            complete = false;
         }
 
+        //Getters and setters for variables
         public int ItemID
         {
             get
@@ -56,6 +61,19 @@ namespace _677FinalProject
             set
             {
                 itemPrice = value;
+            }
+        }
+
+        public bool Completed
+        {
+            get
+            {
+                return complete;
+            }
+
+            set
+            {
+                complete = value;
             }
         }
     }

@@ -40,7 +40,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.submitButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
-            this.addButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // requestItemsListView
@@ -155,23 +154,11 @@
             this.removeButton.UseVisualStyleBackColor = true;
             this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
-            // addButton
-            // 
-            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addButton.Location = new System.Drawing.Point(30, 388);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(146, 40);
-            this.addButton.TabIndex = 19;
-            this.addButton.Text = "Add New";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
-            // 
             // RequestItemsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(603, 496);
-            this.Controls.Add(this.addButton);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.salesTaxLabel);
@@ -202,6 +189,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.Button removeButton;
-        private System.Windows.Forms.Button addButton;
     }
 }
