@@ -20,6 +20,7 @@ namespace _677FinalProject
             FillList();
         }
 
+        private RequestItemsForm ri = new RequestItemsForm();
         private List<SoftwareHardware> itemList = new List<SoftwareHardware>();
 
         public void FillList()
@@ -51,6 +52,17 @@ namespace _677FinalProject
             }
 
             
+        }
+
+        private void addItemButton_Click(object sender, EventArgs e)
+        {
+
+            ri.Show();
+            foreach(ListViewItem i in requestListView.SelectedItems)
+            {
+                ri.RequestItemsListView.Items.Add((ListViewItem)i.Clone());
+            }
+            this.Close();
         }
     }
 }

@@ -16,5 +16,29 @@ namespace _677FinalProject
         {
             InitializeComponent();
         }
+
+        public ListView RequestItemsListView
+        {
+            get
+            {
+                return requestItemsListView;
+            }
+
+            set
+            {
+                requestItemsListView = value;
+            }
+        }
+
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            RequestForm r = new RequestForm();
+            r.Show();
+        }
     }
 }
