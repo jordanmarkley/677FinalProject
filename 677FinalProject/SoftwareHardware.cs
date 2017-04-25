@@ -13,7 +13,6 @@ namespace _677FinalProject
         private int itemID;
         private string description;
         private double itemPrice;
-        private bool complete;
 
         //Constructor
         public SoftwareHardware(int id, string desc, double price)
@@ -21,7 +20,6 @@ namespace _677FinalProject
             itemID = id;
             description = desc;
             itemPrice = price;
-            complete = false;
         }
 
         //Getters and setters for variables
@@ -61,19 +59,6 @@ namespace _677FinalProject
             set
             {
                 itemPrice = value;
-            }
-        }
-
-        public bool Completed
-        {
-            get
-            {
-                return complete;
-            }
-
-            set
-            {
-                complete = value;
             }
         }
     }
