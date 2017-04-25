@@ -59,8 +59,8 @@ namespace _677FinalProject
 
 
             //if adding an employee id doesnt work, then this is the culprit 
-            SqlCommand getID = new SqlCommand(@"SELECT MAX(EmployeeID) FROM EMPLOYEES", cnn);
-            getID.Parameters.AddWithValue("Max(EmployeeID)", idCounter);
+            SqlCommand getID = new SqlCommand(@"SELECT MAX(EMPLOYEE_ID) FROM EMPLOYEES", cnn);
+            getID.Parameters.AddWithValue("MAX(EMPLOYEE_ID)", idCounter);
             daterbase.close();
             return idCounter;
 
