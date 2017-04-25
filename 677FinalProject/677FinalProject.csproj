@@ -112,6 +112,7 @@
     <Compile Include="RequestForm.Designer.cs">
       <DependentUpon>RequestForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LineItem.cs" />
     <Compile Include="RequestItemsForm.cs">
       <SubType>Form</SubType>
     </Compile>
