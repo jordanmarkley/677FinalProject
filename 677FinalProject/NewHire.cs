@@ -28,15 +28,19 @@ namespace _677FinalProject
         List<Employee> employees;
 
         //this method adds employees to the database
-        public void add()
+        public void add(List<Employee> nEmployees)
         {
             //ths establishes a connection to the database
             SqlConnection pushn = new SqlConnection();
             DBcnn daterbase = new DBcnn(pushn);
             daterbase.connect(null);
 
-            SqlCommand addin = new SqlCommand("INSERT INTO");
-
+            //this sql statement takes each attribute of employee "e" and pushes them to the database
+            foreach (Employee e in nEmployees)
+            {
+               
+                SqlCommand addin = new SqlCommand("INSERT INTO Employees(EmployeeID, FirstName, LastName, Title, Password, DateofBirth, BackgroundPass, Gender) VALUES(@e.employeeID, @e.firstN, @e.lastN, @e.empTitle, @e.emPassword, @e.bday, @e.CBGB, @e.gander)", pushn);
+            }
             daterbase.close();
         }
 
