@@ -39,7 +39,7 @@ namespace _677FinalProject
             foreach (Employee e in nEmployees)
             {
                
-                SqlCommand addin = new SqlCommand("INSERT INTO Employees(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, TITLE, PASSWORD, DATE_OF_BIRTH, BACKGROUND, GENDER) VALUES(@e.employeeID, @e.firstN, @e.lastN, @e.empTitle, @e.emPassword, @e.bday, @e.CBGB, @e.gander)", pushn);
+                SqlCommand addin = new SqlCommand("INSERT INTO EMPLOYEES(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, TITLE, PASSWORD, DATE_OF_BIRTH, BACKGROUND, GENDER) VALUES(@e.employeeID, @e.firstN, @e.lastN, @e.empTitle, @e.emPassword, @e.bday, @e.CBGB, @e.gander)", pushn);
             }
             daterbase.close();
         }

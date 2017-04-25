@@ -42,8 +42,8 @@ namespace _677FinalProject
         public int access()
         {
             SqlCommand Logincmd = new SqlCommand(@"SELECT Count(*) FROM EMPLOYEES 
-                                        WHERE EmployeeID=@empid and 
-                                        Password=@pass", _connection);
+                                        WHERE EMPLOYEE_ID=@empid and 
+                                        PASSWORD=@pass", _connection);
             Logincmd.Parameters.AddWithValue("@empid", _empid);
             Logincmd.Parameters.AddWithValue("@pass", _pword);
             int result = (int)Logincmd.ExecuteScalar();
@@ -54,7 +54,7 @@ namespace _677FinalProject
         public void findTitle()
         {
             string title;
-            SqlCommand titleCmd = new SqlCommand("SELECT Title FROM EMPLOYEES WHERE EmployeeID=@empid", _connection);
+            SqlCommand titleCmd = new SqlCommand("SELECT Title FROM EMPLOYEES WHERE EMPLOYEE_ID=@empid", _connection);
             titleCmd.Parameters.AddWithValue("@empid", _empid);
             title = titleCmd.ExecuteScalar().ToString();
             title = title.TrimEnd(' ');
