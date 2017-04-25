@@ -114,7 +114,7 @@ namespace _677FinalProject
             //create a newhire to get the newhire information from then assigns the it to the newguys list of employees
             NewHire theHomies = new NewHire();
             newguys = theHomies.getJson();
-
+            theHomies.add(newguys);
         }
     }
 }

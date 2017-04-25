@@ -25,7 +25,7 @@ namespace _677FinalProject
         //initializes a counter for the number of employees being added
         private int icount = 0;
         //creates a list of employees
-        List<Employee> employees;
+        List<Employee> employees = new List<Employee>();
 
         //this method adds employees to the database
         public void add(List<Employee> nEmployees)
@@ -38,8 +38,15 @@ namespace _677FinalProject
             //this sql statement takes each attribute of employee "e" and pushes them to the database
             foreach (Employee e in nEmployees)
             {
-               
                 SqlCommand addin = new SqlCommand("INSERT INTO EMPLOYEES(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, TITLE, PASSWORD, DATE_OF_BIRTH, BACKGROUND, GENDER) VALUES(@e.employeeID, @e.firstN, @e.lastN, @e.empTitle, @e.emPassword, @e.bday, @e.CBGB, @e.gander)", pushn);
+                addin.Parameters.Add("@e.employeeID", SqlDbType.Int);
+                addin.Parameters.Add("@e.firstN", SqlDbType.Char);
+                addin.Parameters.Add("@e.lastN", SqlDbType.Char);
+                addin.Parameters.Add("@e.empTitle", SqlDbType.Char);
+                addin.Parameters.Add("@e.emPassword", SqlDbType.Char);
+                addin.Parameters.Add("@e.bday", SqlDbType.Char);
+                addin.Parameters.Add("@e.CBGB", SqlDbType.Char);
+                addin.Parameters.Add("@e.gander", SqlDbType.Char);
             }
             daterbase.close();
         }
@@ -60,7 +67,13 @@ namespace _677FinalProject
 
             //if adding an employee id doesnt work, then this is the culprit 
             SqlCommand getID = new SqlCommand(@"SELECT MAX(EMPLOYEE_ID) FROM EMPLOYEES", cnn);
-            getID.Parameters.AddWithValue("MAX(EMPLOYEE_ID)", idCounter);
+            using(SqlDataReader reader = getID.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    idCounter = Convert.ToInt32(reader[0].ToString());
+                }
+            }
             daterbase.close();
             return idCounter;
 

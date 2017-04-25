@@ -65,6 +65,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GROUP5DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GROUP5DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GROUP5DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GROUP5DataSetUSE.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -192,6 +197,17 @@
     </None>
     <None Include="GROUP5DataSet.xss">
       <DependentUpon>GROUP5DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GROUP5DataSet1.xsc">
+      <DependentUpon>GROUP5DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="GROUP5DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GROUP5DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GROUP5DataSet1.xss">
+      <DependentUpon>GROUP5DataSet1.xsd</DependentUpon>
     </None>
     <None Include="GROUP5DataSetUSE.xsc">
       <DependentUpon>GROUP5DataSetUSE.xsd</DependentUpon>

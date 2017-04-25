@@ -25,6 +25,9 @@ namespace _677FinalProject
             gender = gen;
             dOB = birthday;
             backgroundStatus = bgstat;
+            empID = eID;
+            pssWord = password;
+            title = ttl;
         }
 
         //getter/setter for first name
