@@ -94,6 +94,18 @@ namespace _677FinalProject
                 }
             }
 
+
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RequestForm r = new RequestForm();
+            r.ShowDialog();
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
             //this bit of the code will add the items in the json file retrieved from the AWS to our database
 
             //create the list that the newhires will be passed to
@@ -102,14 +114,7 @@ namespace _677FinalProject
             //create a newhire to get the newhire information from then assigns the it to the newguys list of employees
             NewHire theHomies = new NewHire();
             newguys = theHomies.getJson();
-    
-            
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            RequestForm r = new RequestForm();
-            r.ShowDialog();
         }
     }
 }
