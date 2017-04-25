@@ -102,16 +102,7 @@ namespace _677FinalProject
             //create a newhire to get the newhire information from then assigns the it to the newguys list of employees
             NewHire theHomies = new NewHire();
             newguys = theHomies.getJson();
-
-            //ths establishes a connection to the database
-            SqlConnection pushn = new SqlConnection();
-            DBcnn daterbase = new DBcnn(pushn);
-            daterbase.connect(null);
-
-            //need to add newhire columns to the database
-            //sql statement for insert the newhires from newhire list into the database
-
-            
+    
             
         }
 

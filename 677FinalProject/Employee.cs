@@ -13,9 +13,12 @@ namespace _677FinalProject
         private string gender;
         private string dOB;
         private string backgroundStatus;
+        private int empID;
+        private string pssWord;
+        private string title;
 
         //constructor
-        public Employee(string fname, string lname, string gen, string birthday, string bgstat)
+        public Employee(string fname, string lname, string gen, string birthday, string bgstat, int eID, string password, string ttl)
         {
             firstName = fname;
             lastName = lname;
@@ -86,6 +89,45 @@ namespace _677FinalProject
             set
             {
                 backgroundStatus = value;
+            }
+        }
+
+        //getter/setter for employeeId
+        public int employeeID
+        {
+            get
+            {
+                return empID;
+            }
+            set
+            {
+                empID = value;
+            }
+        }
+
+        //getter/setter for password
+        public string emPassword 
+        {
+            get
+            {
+                return pssWord;
+            }
+            set
+            {
+                pssWord = value;
+            }
+        }
+
+        //getter/setter for title
+        public string empTitle
+        {
+            get
+            {
+                return title;
+            }
+            set
+            {
+                title = value;
             }
         }
     }

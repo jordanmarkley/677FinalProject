@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
 
 namespace _677FinalProject
 {
@@ -26,6 +27,42 @@ namespace _677FinalProject
         //creates a list of employees
         List<Employee> employees;
 
+        //this method adds employees to the database
+        public void add()
+        {
+            //ths establishes a connection to the database
+            SqlConnection pushn = new SqlConnection();
+            DBcnn daterbase = new DBcnn(pushn);
+            daterbase.connect(null);
+
+            SqlCommand addin = new SqlCommand("INSERT INTO");
+
+            daterbase.close();
+        }
+
+        //this method gets the largest id number from the database
+        public int Counter()
+        {
+            //creates a counter for the employee id
+            int idCounter = 0;
+
+            //this is a stored procedure call for the idCounter
+            //ths establishes a connection to the database
+            SqlConnection cnn = new SqlConnection();
+            DBcnn daterbase = new DBcnn(cnn);
+            daterbase.connect(null);
+            daterbase.open();
+
+
+            //if adding an employee id doesnt work, then this is the culprit 
+            SqlCommand getID = new SqlCommand(@"SELECT MAX(EmployeeID) FROM EMPLOYEES", cnn);
+            getID.Parameters.AddWithValue("Max(EmployeeID)", idCounter);
+            daterbase.close();
+            return idCounter;
+
+        }
+
+        //this method returns a list of employees
         public List<Employee> getJson()
         {
             //all of this can be inserted into a method that can be called when the form initializes
@@ -43,6 +80,7 @@ namespace _677FinalProject
                 //this creates an array of strings, each array index containing an entry from the json file
                 jsonArray = sjson.Split('}');
 
+                //this 
 
                 //this splits each entry at character ',' giving us a new array holding the individual column headings and their
                 //data i.e. sex:M
@@ -102,11 +140,16 @@ namespace _677FinalProject
                     icount++;
                 }
 
+                //this gets the top ID# from the database
+                int idCounter = Counter();
+
+
                 //iterates through each employee
                 for(int i = 0; i<icount;i++)
                 {
+
                     //creates a new employee and passing each attribute that was saved in the dataArray multidimensional array
-                    Employee newGuy = new Employee(dataArray[i, 0], dataArray[i, 1], dataArray[i, 2], dataArray[i, 3], dataArray[i, 4]);
+                    Employee newGuy = new Employee(dataArray[i, 0], dataArray[i, 1], dataArray[i, 2], dataArray[i, 3], dataArray[i, 4], idCounter++, dataArray[i, 1], "New Hire");
 
                     //adds the employee created above to the list of employees
                     employees.Add(newGuy);
