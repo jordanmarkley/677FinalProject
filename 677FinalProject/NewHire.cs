@@ -16,10 +16,59 @@ namespace _677FinalProject
 {
     class NewHire
     {
+        //Variables
+        int id;
+        string lastName;
+        string background;
+
         //constructor
         public NewHire()
         {
 
+        }
+
+        //Constructor - 3 variables
+        public NewHire(int i, string lN, string b)
+        {
+            id = i;
+            lastName = lN;
+            background = b;
+        }
+
+        //Accessors for variables
+        public int ID
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                id = value;
+            }
+        }
+
+        public string LastName
+        {
+            get
+            {
+                return lastName;
+            }
+            set
+            {
+                lastName = value;
+            }
+        }
+        public string Background
+        {
+            get
+            {
+                return background;
+            }
+            set
+            {
+                background = value;
+            }
         }
 
         //initializes a counter for the number of employees being added
@@ -31,23 +80,39 @@ namespace _677FinalProject
         public void add(List<Employee> nEmployees)
         {
             //ths establishes a connection to the database
-            SqlConnection pushn = new SqlConnection();
-            DBcnn daterbase = new DBcnn(pushn);
+            SqlConnection cnn = new SqlConnection();
+            DBcnn daterbase = new DBcnn(cnn);
             daterbase.connect(null);
             daterbase.open();
+
+            List<string> lastNames = new List<string>();
+
+            SqlCommand cmd = new SqlCommand(@"SELECT LAST_NAME FROM EMPLOYEES", cnn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds= new DataSet();
+            da.Fill(ds, "EMPLOYEES");
+
+            foreach (DataRow dr in ds.Tables["EMPLOYEES"].Rows)
+            {
+                lastNames.Add(dr["LAST_NAME"].ToString().TrimEnd(' '));
+            }
+
             //this sql statement takes each attribute of employee "e" and pushes them to the database
             foreach (Employee e in nEmployees)
             {
-                SqlCommand addin = new SqlCommand("INSERT INTO EMPLOYEES(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, TITLE, PASSWORD, DATE_OF_BIRTH, BACKGROUND, GENDER) VALUES(@employeeID, @firstN, @lastN, @empTitle, @emPassword, @bday, @CBGB, @gander)", pushn);
-                addin.Parameters.Add(new SqlParameter("@employeeID", e.employeeID));
-                addin.Parameters.Add(new SqlParameter("@firstN", e.firstN));
-                addin.Parameters.Add(new SqlParameter("@lastN", e.lastN));
-                addin.Parameters.Add(new SqlParameter("@empTitle", e.empTitle));
-                addin.Parameters.Add(new SqlParameter("@emPassword", e.emPassword));
-                addin.Parameters.Add(new SqlParameter("@bday", e.bday));
-                addin.Parameters.Add(new SqlParameter("@CBGB", e.CBGB));
-                addin.Parameters.Add(new SqlParameter("@gander", e.gander));
-                addin.ExecuteNonQuery();
+                if (!(lastNames.Contains(e.lastN)))
+                {
+                    SqlCommand addin = new SqlCommand("INSERT INTO EMPLOYEES(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, TITLE, PASSWORD, DATE_OF_BIRTH, BACKGROUND, GENDER) VALUES(@employeeID, @firstN, @lastN, @empTitle, @emPassword, @bday, @CBGB, @gander)", cnn);
+                    addin.Parameters.Add(new SqlParameter("@employeeID", e.employeeID));
+                    addin.Parameters.Add(new SqlParameter("@firstN", e.firstN));
+                    addin.Parameters.Add(new SqlParameter("@lastN", e.lastN));
+                    addin.Parameters.Add(new SqlParameter("@empTitle", e.empTitle));
+                    addin.Parameters.Add(new SqlParameter("@emPassword", e.emPassword));
+                    addin.Parameters.Add(new SqlParameter("@bday", e.bday));
+                    addin.Parameters.Add(new SqlParameter("@CBGB", e.CBGB));
+                    addin.Parameters.Add(new SqlParameter("@gander", e.gander));
+                    addin.ExecuteNonQuery();
+                }
             }
             daterbase.close();
         }

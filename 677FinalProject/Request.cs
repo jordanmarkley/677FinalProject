@@ -39,6 +39,12 @@ namespace _677FinalProject
             date = d;
         }
 
+        //Constructor
+        public Request()
+        {
+
+        }
+
         //Getters and setters for variables
         public int RequestID
         {

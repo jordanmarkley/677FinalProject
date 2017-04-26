@@ -58,6 +58,12 @@
     <Compile Include="BuildTeamViewRequestForm.Designer.cs">
       <DependentUpon>BuildTeamViewRequestForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CheckSuperiorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckSuperiorForm.Designer.cs">
+      <DependentUpon>CheckSuperiorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBcnn.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="GROUP5DataSet.Designer.cs">
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BuildTeamViewRequestForm.resx">
       <DependentUpon>BuildTeamViewRequestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckSuperiorForm.resx">
+      <DependentUpon>CheckSuperiorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HRRepForm.resx">
       <DependentUpon>HRRepForm.cs</DependentUpon>

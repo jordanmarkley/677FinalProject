@@ -35,7 +35,7 @@
             this.requestStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.viewRequestButton = new System.Windows.Forms.Button();
             this.logOutButton = new System.Windows.Forms.Button();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.employeeListView = new System.Windows.Forms.ListView();
             this.employeeID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.employeeName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.background = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -105,20 +105,21 @@
             this.logOutButton.Text = "Log Out";
             this.logOutButton.UseVisualStyleBackColor = true;
             // 
-            // listView2
+            // employeeListView
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.employeeListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.employeeID,
             this.employeeName,
             this.background});
-            this.listView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView2.GridLines = true;
-            this.listView2.Location = new System.Drawing.Point(27, 314);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(379, 167);
-            this.listView2.TabIndex = 7;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
+            this.employeeListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeeListView.FullRowSelect = true;
+            this.employeeListView.GridLines = true;
+            this.employeeListView.Location = new System.Drawing.Point(27, 314);
+            this.employeeListView.Name = "employeeListView";
+            this.employeeListView.Size = new System.Drawing.Size(379, 167);
+            this.employeeListView.TabIndex = 7;
+            this.employeeListView.UseCompatibleStateImageBehavior = false;
+            this.employeeListView.View = System.Windows.Forms.View.Details;
             // 
             // employeeID
             // 
@@ -164,6 +165,7 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Create Request";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // HRRepForm
             // 
@@ -173,7 +175,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.viewEmployeeButton);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.listView2);
+            this.Controls.Add(this.employeeListView);
             this.Controls.Add(this.logOutButton);
             this.Controls.Add(this.viewRequestButton);
             this.Controls.Add(this.label1);
@@ -194,7 +196,7 @@
         private System.Windows.Forms.ColumnHeader requestStatus;
         private System.Windows.Forms.Button viewRequestButton;
         private System.Windows.Forms.Button logOutButton;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView employeeListView;
         private System.Windows.Forms.ColumnHeader employeeID;
         private System.Windows.Forms.ColumnHeader employeeName;
         private System.Windows.Forms.ColumnHeader background;
