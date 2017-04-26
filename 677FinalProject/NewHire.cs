@@ -38,15 +38,15 @@ namespace _677FinalProject
             //this sql statement takes each attribute of employee "e" and pushes them to the database
             foreach (Employee e in nEmployees)
             {
-                SqlCommand addin = new SqlCommand("INSERT INTO EMPLOYEES(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, TITLE, PASSWORD, DATE_OF_BIRTH, BACKGROUND, GENDER) VALUES(@e.employeeID, @e.firstN, @e.lastN, @e.empTitle, @e.emPassword, @e.bday, @e.CBGB, @e.gander)", pushn);
-                addin.Parameters.Add(new SqlParameter("@e.employeeID", e.employeeID));
-                addin.Parameters.Add(new SqlParameter("@e.firstN", e.firstN));
-                addin.Parameters.Add(new SqlParameter("@e.lastN", e.lastN));
-                addin.Parameters.Add(new SqlParameter("@e.empTitle", e.empTitle));
-                addin.Parameters.Add(new SqlParameter("@e.emPassword", e.emPassword));
-                addin.Parameters.Add(new SqlParameter("@e.bday", e.bday));
-                addin.Parameters.Add(new SqlParameter("@e.CBGB", e.CBGB));
-                addin.Parameters.Add(new SqlParameter("@e.gander", e.gander));
+                SqlCommand addin = new SqlCommand("INSERT INTO EMPLOYEES(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, TITLE, PASSWORD, DATE_OF_BIRTH, BACKGROUND, GENDER) VALUES(@employeeID, @firstN, @lastN, @empTitle, @emPassword, @bday, @CBGB, @gander)", pushn);
+                addin.Parameters.Add(new SqlParameter("@employeeID", e.employeeID));
+                addin.Parameters.Add(new SqlParameter("@firstN", e.firstN));
+                addin.Parameters.Add(new SqlParameter("@lastN", e.lastN));
+                addin.Parameters.Add(new SqlParameter("@empTitle", e.empTitle));
+                addin.Parameters.Add(new SqlParameter("@emPassword", e.emPassword));
+                addin.Parameters.Add(new SqlParameter("@bday", e.bday));
+                addin.Parameters.Add(new SqlParameter("@CBGB", e.CBGB));
+                addin.Parameters.Add(new SqlParameter("@gander", e.gander));
                 addin.ExecuteNonQuery();
             }
             daterbase.close();
@@ -76,7 +76,7 @@ namespace _677FinalProject
                 }
             }
             daterbase.close();
-            return idCounter;
+            return idCounter++;
 
         }
 
@@ -160,24 +160,24 @@ namespace _677FinalProject
 
                 //this gets the top ID# from the database
                 int idCounter = Counter();
-
+                idCounter++;
 
                 //iterates through each employee
                 for(int i = 0; i<icount;i++)
                 {
 
                     //creates a new employee and passing each attribute that was saved in the dataArray multidimensional array
-                    Employee newGuy = new Employee(dataArray[i, 0], dataArray[i, 1], dataArray[i, 2], dataArray[i, 3], dataArray[i, 4], idCounter++, dataArray[i, 1], "New Hire");
+                    Employee newGuy = new Employee(dataArray[i, 0], dataArray[i, 1], dataArray[i, 2], dataArray[i, 3], dataArray[i, 4], idCounter, dataArray[i, 1], "New Hire");
 
                     //adds the employee created above to the list of employees
                     employees.Add(newGuy);
+
+                    idCounter++;
                 }
 
                 //returns the list of employees that were brought in from the AWS json file
                 return employees;
             }
         }
-    }
-
-    
+    }  
 }
