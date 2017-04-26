@@ -34,19 +34,20 @@ namespace _677FinalProject
             SqlConnection pushn = new SqlConnection();
             DBcnn daterbase = new DBcnn(pushn);
             daterbase.connect(null);
-
+            daterbase.open();
             //this sql statement takes each attribute of employee "e" and pushes them to the database
             foreach (Employee e in nEmployees)
             {
                 SqlCommand addin = new SqlCommand("INSERT INTO EMPLOYEES(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, TITLE, PASSWORD, DATE_OF_BIRTH, BACKGROUND, GENDER) VALUES(@e.employeeID, @e.firstN, @e.lastN, @e.empTitle, @e.emPassword, @e.bday, @e.CBGB, @e.gander)", pushn);
-                addin.Parameters.Add("@e.employeeID", SqlDbType.Int);
-                addin.Parameters.Add("@e.firstN", SqlDbType.Char);
-                addin.Parameters.Add("@e.lastN", SqlDbType.Char);
-                addin.Parameters.Add("@e.empTitle", SqlDbType.Char);
-                addin.Parameters.Add("@e.emPassword", SqlDbType.Char);
-                addin.Parameters.Add("@e.bday", SqlDbType.Char);
-                addin.Parameters.Add("@e.CBGB", SqlDbType.Char);
-                addin.Parameters.Add("@e.gander", SqlDbType.Char);
+                addin.Parameters.Add(new SqlParameter("@e.employeeID", e.employeeID));
+                addin.Parameters.Add(new SqlParameter("@e.firstN", e.firstN));
+                addin.Parameters.Add(new SqlParameter("@e.lastN", e.lastN));
+                addin.Parameters.Add(new SqlParameter("@e.empTitle", e.empTitle));
+                addin.Parameters.Add(new SqlParameter("@e.emPassword", e.emPassword));
+                addin.Parameters.Add(new SqlParameter("@e.bday", e.bday));
+                addin.Parameters.Add(new SqlParameter("@e.CBGB", e.CBGB));
+                addin.Parameters.Add(new SqlParameter("@e.gander", e.gander));
+                addin.ExecuteNonQuery();
             }
             daterbase.close();
         }

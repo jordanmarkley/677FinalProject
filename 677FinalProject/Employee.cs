@@ -8,6 +8,7 @@ namespace _677FinalProject
 {
     class Employee
     {
+        //Variables
         private string firstName;
         private string lastName;
         private string gender;
