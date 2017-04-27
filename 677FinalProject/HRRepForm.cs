@@ -105,17 +105,19 @@ namespace _677FinalProject
             {
                 MessageBox.Show("Please select an employee to create a request for.");
             }
+            FillRequestListView();
         }
 
         private void FillRequestListView()
         {
+
             List<Request> requestList = new List<Request>();
 
             SqlConnection cnn = new SqlConnection();
             DBcnn database = new DBcnn(cnn);
             database.connect(null);
             database.open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM REQEUST", cnn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM REQUEST", cnn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -148,7 +150,10 @@ namespace _677FinalProject
                 {
                     i.SubItems.Add("Request Being Build");
                 }
-                requestListView.Items.Add(i);
+                if (!(requestListView.Items.Contains(i)))
+                {
+                    requestListView.Items.Add(i);
+                }
             }
         }
     }

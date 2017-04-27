@@ -54,7 +54,7 @@ namespace _677FinalProject
                 reader.Read();
                 DataTable dt = new DataTable();
                 dt.Load(reader);
-                if(dt.Rows.Count == 0)
+                if (dt.Rows.Count == 0)
                 {
                     reqID = 300;
                 }
@@ -62,7 +62,7 @@ namespace _677FinalProject
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
-                        reqID = Convert.ToInt32(dr["REQUEST_ID"].ToString());
+                        reqID = Convert.ToInt32(dr["REQUEST_ID"].ToString()) + 1;
                     }
                 }
                 getID.Cancel();
