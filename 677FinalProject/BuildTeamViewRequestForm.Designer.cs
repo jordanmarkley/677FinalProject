@@ -35,20 +35,22 @@
             this.buildItemButton = new System.Windows.Forms.Button();
             this.confirmRequestButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
+            this.Complete = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // itemsListView
             // 
             this.itemsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Complete,
             this.id,
             this.desription,
             this.price});
             this.itemsListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.itemsListView.FullRowSelect = true;
             this.itemsListView.GridLines = true;
-            this.itemsListView.Location = new System.Drawing.Point(31, 23);
+            this.itemsListView.Location = new System.Drawing.Point(12, 23);
             this.itemsListView.Name = "itemsListView";
-            this.itemsListView.Size = new System.Drawing.Size(541, 305);
+            this.itemsListView.Size = new System.Drawing.Size(629, 305);
             this.itemsListView.TabIndex = 4;
             this.itemsListView.UseCompatibleStateImageBehavior = false;
             this.itemsListView.View = System.Windows.Forms.View.Details;
@@ -66,12 +68,12 @@
             // price
             // 
             this.price.Text = "Price";
-            this.price.Width = 83;
+            this.price.Width = 100;
             // 
             // buildItemButton
             // 
             this.buildItemButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buildItemButton.Location = new System.Drawing.Point(426, 334);
+            this.buildItemButton.Location = new System.Drawing.Point(495, 342);
             this.buildItemButton.Name = "buildItemButton";
             this.buildItemButton.Size = new System.Drawing.Size(146, 40);
             this.buildItemButton.TabIndex = 18;
@@ -83,7 +85,7 @@
             // 
             this.confirmRequestButton.Enabled = false;
             this.confirmRequestButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmRequestButton.Location = new System.Drawing.Point(349, 380);
+            this.confirmRequestButton.Location = new System.Drawing.Point(418, 388);
             this.confirmRequestButton.Name = "confirmRequestButton";
             this.confirmRequestButton.Size = new System.Drawing.Size(223, 40);
             this.confirmRequestButton.TabIndex = 19;
@@ -93,18 +95,23 @@
             // closeButton
             // 
             this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeButton.Location = new System.Drawing.Point(426, 426);
+            this.closeButton.Location = new System.Drawing.Point(495, 434);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(146, 40);
             this.closeButton.TabIndex = 20;
             this.closeButton.Text = "Close";
             this.closeButton.UseVisualStyleBackColor = true;
             // 
+            // Complete
+            // 
+            this.Complete.Text = "Complete";
+            this.Complete.Width = 91;
+            // 
             // BuildTeamViewRequestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(608, 474);
+            this.ClientSize = new System.Drawing.Size(653, 486);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.confirmRequestButton);
             this.Controls.Add(this.buildItemButton);
@@ -124,5 +131,6 @@
         private System.Windows.Forms.Button buildItemButton;
         private System.Windows.Forms.Button confirmRequestButton;
         private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.ColumnHeader Complete;
     }
 }

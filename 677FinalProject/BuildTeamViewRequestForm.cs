@@ -21,7 +21,7 @@ namespace _677FinalProject
         {
             foreach(ListViewItem i in itemsListView.SelectedItems)
             {
-                
+                i.SubItems[0].Text = "X";
             }
         }
     }
