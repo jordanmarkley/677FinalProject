@@ -51,24 +51,13 @@ namespace _677FinalProject
             SqlCommand getID = new SqlCommand(@"SELECT MAX(REQUEST_ID) FROM REQUEST", cnn);
             using (SqlDataReader reader = getID.ExecuteReader())
             {
-                reader.Read();
-                DataTable dt = new DataTable();
-                dt.Load(reader);
-                if (dt.Rows.Count == 0)
+                while (reader.Read())
                 {
-                    reqID = 300;
+                    reqID = Convert.ToInt32(reader[0].ToString());
                 }
-                else
-                {
-                    foreach (DataRow dr in dt.Rows)
-                    {
-                        reqID = Convert.ToInt32(dr["REQUEST_ID"].ToString()) + 1;
-                    }
-                }
-                getID.Cancel();
-                reader.Close();
             }
             db.close();
+            reqID++;
 
             empID = eID;
             supID = sID;

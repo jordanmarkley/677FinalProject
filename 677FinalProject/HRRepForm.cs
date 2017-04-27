@@ -99,13 +99,14 @@ namespace _677FinalProject
                     add.Parameters.Add(new SqlParameter("@employeeID", r.EmployeeID));
                     add.ExecuteNonQuery();
                     database.close();
+
+                    ConcatenateListView();
                 }
             }
             else
             {
                 MessageBox.Show("Please select an employee to create a request for.");
             }
-            FillRequestListView();
         }
 
         private void FillRequestListView()
@@ -150,11 +151,52 @@ namespace _677FinalProject
                 {
                     i.SubItems.Add("Request Being Build");
                 }
-                if (!(requestListView.Items.Contains(i)))
-                {
-                    requestListView.Items.Add(i);
-                }
+                requestListView.Items.Add(i);
             }
+        }
+
+        private void ConcatenateListView()
+        {
+            List<Request> requestList = new List<Request>();
+
+            SqlConnection cnn = new SqlConnection();
+            DBcnn database = new DBcnn(cnn);
+            database.connect(null);
+            database.open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM REQUEST", cnn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                int rID = Convert.ToInt32(dr["REQUEST_ID"]);
+                int sID = Convert.ToInt32(dr["SUPERVISOR"]);
+                int status = Convert.ToInt32(dr["COUNTER"]);
+
+                Request r = new Request(rID, sID, status);
+                requestList.Add(r);
+            }
+
+            Request lastItem = requestList[requestList.Count - 1];
+
+            int reqID = lastItem.RequestID;
+            int supID = lastItem.SupervisorID;
+            int stat = lastItem.Status;
+            ListViewItem i = new ListViewItem(reqID.ToString());
+            i.SubItems.Add(supID.ToString());
+            if (stat == 1)
+            {
+                i.SubItems.Add("Awaiting Supervisor to choose Items");
+            }
+            else if (stat == 2)
+            {
+                i.SubItems.Add("Awaiting Manager approval");
+            }
+            else if (stat == 3)
+            {
+                i.SubItems.Add("Request Being Build");
+            }
+            requestListView.Items.Add(i);
         }
     }
 }
