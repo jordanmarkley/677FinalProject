@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace _677FinalProject
 {
@@ -40,9 +41,46 @@ namespace _677FinalProject
         }
 
         //Constructor
-        public Request()
+        public Request(int eID, int sID)
         {
+            SqlConnection cnn = new SqlConnection();
+            DBcnn db = new DBcnn(cnn);
+            db.connect(null);
+            db.open();
+            
+            SqlCommand getID = new SqlCommand(@"SELECT MAX(REQUEST_ID) FROM REQUEST", cnn);
+            using (SqlDataReader reader = getID.ExecuteReader())
+            {
+                reader.Read();
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+                if(dt.Rows.Count == 0)
+                {
+                    reqID = 300;
+                }
+                else
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        reqID = Convert.ToInt32(dr["REQUEST_ID"].ToString());
+                    }
+                }
+                getID.Cancel();
+                reader.Close();
+            }
+            db.close();
 
+            empID = eID;
+            supID = sID;
+            status = 1;
+            date = DateTime.Now.ToString("dd.MM.yyy");
+        }
+
+        public Request(int rID, int sID, int s)
+        {
+            reqID = rID;
+            supID = sID;
+            status = s;
         }
 
         //Getters and setters for variables

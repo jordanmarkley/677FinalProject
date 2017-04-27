@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.requestListView = new System.Windows.Forms.ListView();
             this.requestID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.requestSupervisor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.requestStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -54,20 +54,20 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Requests:";
             // 
-            // listView1
+            // requestListView
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.requestListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.requestID,
             this.requestSupervisor,
             this.requestStatus});
-            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(27, 57);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(379, 167);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.requestListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.requestListView.GridLines = true;
+            this.requestListView.Location = new System.Drawing.Point(27, 57);
+            this.requestListView.Name = "requestListView";
+            this.requestListView.Size = new System.Drawing.Size(379, 167);
+            this.requestListView.TabIndex = 2;
+            this.requestListView.UseCompatibleStateImageBehavior = false;
+            this.requestListView.View = System.Windows.Forms.View.Details;
             // 
             // requestID
             // 
@@ -179,7 +179,7 @@
             this.Controls.Add(this.logOutButton);
             this.Controls.Add(this.viewRequestButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.requestListView);
             this.Name = "HRRepForm";
             this.Text = "Human Resources";
             this.ResumeLayout(false);
@@ -190,7 +190,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView requestListView;
         private System.Windows.Forms.ColumnHeader requestID;
         private System.Windows.Forms.ColumnHeader requestSupervisor;
         private System.Windows.Forms.ColumnHeader requestStatus;

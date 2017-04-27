@@ -18,6 +18,8 @@ namespace _677FinalProject
             InitializeComponent();
 
             fillListView();
+
+            FillRequestListView();
         }
 
         //open the selected request
@@ -81,13 +83,72 @@ namespace _677FinalProject
                     CheckSuperiorForm supForm = new CheckSuperiorForm();
                     supForm.ShowDialog();
                     supID = supForm.getSupervisorID();
+
                     //Create new request
-                    Request r = new Request();
+                    Request r = new Request(id, supID);
+
+                    SqlConnection cnn = new SqlConnection();
+                    DBcnn database = new DBcnn(cnn);
+                    database.connect(null);
+                    database.open();
+                    SqlCommand add = new SqlCommand("INSERT INTO REQUEST(REQUEST_ID, COUNTER, DATE, SUPERVISOR, EMPLOYEE_ID) VALUES(@requestID, @counter, @date, @supervisor, @employeeID)", cnn);
+                    add.Parameters.Add(new SqlParameter("@requestID", r.RequestID));
+                    add.Parameters.Add(new SqlParameter("@counter", r.Status));
+                    add.Parameters.Add(new SqlParameter("@date", r.Date));
+                    add.Parameters.Add(new SqlParameter("@supervisor", r.SupervisorID));
+                    add.Parameters.Add(new SqlParameter("@employeeID", r.EmployeeID));
+                    add.ExecuteNonQuery();
+                    database.close();
                 }
             }
             else
             {
                 MessageBox.Show("Please select an employee to create a request for.");
+            }
+        }
+
+        private void FillRequestListView()
+        {
+            List<Request> requestList = new List<Request>();
+
+            SqlConnection cnn = new SqlConnection();
+            DBcnn database = new DBcnn(cnn);
+            database.connect(null);
+            database.open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM REQEUST", cnn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                int rID = Convert.ToInt32(dr["REQUEST_ID"]);
+                int sID = Convert.ToInt32(dr["SUPERVISOR"]);
+                int status = Convert.ToInt32(dr["COUNTER"]);
+
+                Request r = new Request(rID, sID, status);
+                requestList.Add(r);
+            }
+
+            foreach (Request r in requestList)
+            {
+                int rID = r.RequestID;
+                int sID = r.SupervisorID;
+                int status = r.Status;
+                ListViewItem i = new ListViewItem(rID.ToString());
+                i.SubItems.Add(sID.ToString());
+                if(status == 1)
+                {
+                    i.SubItems.Add("Awaiting Supervisor to choose Items");
+                }
+                else if (status == 2)
+                {
+                    i.SubItems.Add("Awaiting Manager approval");
+                }
+                else if (status == 3)
+                {
+                    i.SubItems.Add("Request Being Build");
+                }
+                requestListView.Items.Add(i);
             }
         }
     }
