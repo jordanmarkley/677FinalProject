@@ -10,50 +10,57 @@ using System.Windows.Forms;
 
 namespace _677FinalProject
 {
-    public partial class HRViewRequestForm : Form
+    public partial class ViewNewHireForm : Form
     {
-        public HRViewRequestForm()
+        public ViewNewHireForm()
         {
             InitializeComponent();
         }
 
-        public string RequestIDLabel
+        public string EmployeeIDLabel
         {
             set
             {
-                requestIDLabel.Text = value;
+                employeeIDLabel.Text = value;
             }
         }
 
-        public string EmployeeLabel
+        public string NameLabel
         {
             set
             {
-                employeeLabel.Text = value;
+                nameLabel.Text = value;
             }
         }
 
-        public string SupervisorLabel
+        public string DateOfBirthLabel
         {
             set
             {
-                supervisorLabel.Text = value;
+                dateOfBirthLabel.Text = value;
+            }
+        }
+        public string BackgroundStatusLabel
+        {
+            set
+            {
+                backgroundStatusLabel.Text = value;
             }
         }
 
-        public string RequestDateLabel
+        public string TitleLabel
         {
             set
             {
-                dateLabel.Text = value;
+                titleLabel.Text = value;
             }
         }
 
-        public string StatusLabel
+        public string GenderLabel
         {
             set
             {
-                statusLabel.Text = value;
+                genderLabel.Text = value;
             }
         }
     }

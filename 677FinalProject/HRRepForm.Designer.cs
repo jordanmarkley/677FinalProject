@@ -61,6 +61,7 @@
             this.requestSupervisor,
             this.requestStatus});
             this.requestListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.requestListView.FullRowSelect = true;
             this.requestListView.GridLines = true;
             this.requestListView.Location = new System.Drawing.Point(27, 57);
             this.requestListView.Name = "requestListView";
@@ -104,6 +105,7 @@
             this.logOutButton.TabIndex = 6;
             this.logOutButton.Text = "Log Out";
             this.logOutButton.UseVisualStyleBackColor = true;
+            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
             // 
             // employeeListView
             // 
@@ -155,6 +157,7 @@
             this.viewEmployeeButton.TabIndex = 9;
             this.viewEmployeeButton.Text = "View Employee";
             this.viewEmployeeButton.UseVisualStyleBackColor = true;
+            this.viewEmployeeButton.Click += new System.EventHandler(this.viewEmployeeButton_Click);
             // 
             // button1
             // 

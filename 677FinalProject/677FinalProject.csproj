@@ -148,6 +148,12 @@
     <Compile Include="SupervisorViewRequestForm.Designer.cs">
       <DependentUpon>SupervisorViewRequestForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewNewHireForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewNewHireForm.Designer.cs">
+      <DependentUpon>ViewNewHireForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BuildTeam.resx">
       <DependentUpon>BuildTeam.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SupervisorViewRequestForm.resx">
       <DependentUpon>SupervisorViewRequestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewNewHireForm.resx">
+      <DependentUpon>ViewNewHireForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="GROUP5DataSet.xsc">
       <DependentUpon>GROUP5DataSet.xsd</DependentUpon>
