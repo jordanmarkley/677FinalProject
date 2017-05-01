@@ -80,7 +80,10 @@ namespace _677FinalProject
                         //Successful login so look up and open employee's title
                         {
                             session.findTitle();
-                            this.Close();
+                            usernameTextbox.Text = null;
+                            passwordTextbox.Text = null;
+                            username = null;
+                            password = null;
                             database.close();
                         }
                         else

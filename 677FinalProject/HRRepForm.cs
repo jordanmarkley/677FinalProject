@@ -348,7 +348,7 @@ namespace _677FinalProject
             ViewNewHireForm newHireForm = new ViewNewHireForm();
 
             newHireForm.EmployeeIDLabel = id.ToString();
-            newHireForm.NameLabel = firstName + " " + lastName;
+            newHireForm.NameLabel = firstName.TrimEnd(' ') + " " + lastName.TrimEnd(' ');
             newHireForm.TitleLabel = title;
             newHireForm.DateOfBirthLabel = dateOfBirth;
             newHireForm.BackgroundStatusLabel = background;
@@ -359,7 +359,11 @@ namespace _677FinalProject
 
         private void logOutButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show("Are you sure you would like to log out?", "Logout", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

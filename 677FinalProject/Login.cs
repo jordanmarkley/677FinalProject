@@ -62,16 +62,29 @@ namespace _677FinalProject
             {
                 ManagerForm m = new ManagerForm();
                 m.ShowDialog();
+                _empid = null;
+                _pword = null;
             }
             else if(title == "Supervisor")
             {
                 SupervisorForm s = new SupervisorForm(Convert.ToInt32(_empid));
                 s.ShowDialog();
+                _empid = null;
+                _pword = null;
             }
             else if(title == "HR Rep")
             {
                 HRRepForm h = new HRRepForm();
                 h.ShowDialog();
+                _empid = null;
+                _pword = null;
+            }
+            else if(title == "Build Team")
+            {
+                BuildTeam b = new BuildTeam();
+                b.ShowDialog();
+                _empid = null;
+                _pword = null;
             }
         }
 

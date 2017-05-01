@@ -127,6 +127,7 @@
             this.acceptButton.TabIndex = 9;
             this.acceptButton.Text = "&Accept";
             this.acceptButton.UseVisualStyleBackColor = true;
+            this.acceptButton.Click += new System.EventHandler(this.acceptButton_Click);
             // 
             // rejectButton
             // 
@@ -137,6 +138,7 @@
             this.rejectButton.TabIndex = 10;
             this.rejectButton.Text = "Reject";
             this.rejectButton.UseVisualStyleBackColor = true;
+            this.rejectButton.Click += new System.EventHandler(this.rejectButton_Click);
             // 
             // cancelButton
             // 
@@ -147,6 +149,7 @@
             this.cancelButton.TabIndex = 11;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // ManagerViewRequestForm
             // 

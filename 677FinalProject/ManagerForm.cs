@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace _677FinalProject
 {
     public partial class ManagerForm : Form
     {
+        private int reqID = 0;
+
         public ManagerForm()
         {
             InitializeComponent();
+
+            FillListView();
         }
 
         /// <summary>
@@ -24,18 +29,129 @@ namespace _677FinalProject
         /// <param name="e"></param>
         private void viewRequestButton_Click(object sender, EventArgs e)
         {
-            //Create new Manager Request form and store the selected form's info
-            ManagerViewRequestForm m = new ManagerViewRequestForm();
-          //store info
-            //m.SupervisorLabelText = INFO IN DATABASE
-            //m.EmployeeLabelText = INFO IN DATABASE
-            //m.ListViewQuantityText = INFO IN DB
-            //m.ListViewDescriptionText = 
-            //m.ListViewPriceText =
-            //m.ListViewLineTotalText =
 
-            //Display the form
-            m.ShowDialog();
+            if(requestListView.SelectedItems.Count == 1)
+            {
+                foreach(ListViewItem i in requestListView.SelectedItems)
+                {
+                    reqID = Convert.ToInt32(i.Text);
+                }
+
+                ManagerViewRequestForm m = new ManagerViewRequestForm(reqID);
+                m.ShowDialog();
+                RefreshListViews();
+            }
+            else
+            {
+                MessageBox.Show("Please select a request to view.");
+            }
+        }
+
+        private void FillListView()
+        {
+            List<int> requestID = new List<int>();
+            List<int> supervisorID = new List<int>();
+            List<string> supervisorName = new List<string>();
+
+            SqlConnection cnn = new SqlConnection();
+            DBcnn database = new DBcnn(cnn);
+            database.connect(null);
+            database.open();
+            SqlCommand cmd = new SqlCommand("SELECT REQUEST_ID, SUPERVISOR FROM REQUEST WHERE COUNTER = 2", cnn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            database.close();
+            foreach(DataRow dr in dt.Rows)
+            {
+                requestID.Add(Convert.ToInt32(dr["REQUEST_ID"]));
+                supervisorID.Add(Convert.ToInt32(dr["SUPERVISOR"]));
+            }
+
+            database.open();
+
+            foreach (int id in supervisorID)
+            {
+                SqlCommand descCmd = new SqlCommand("SELECT FIRST_NAME, LAST_NAME FROM EMPLOYEES WHERE EMPLOYEE_ID=@id", cnn);
+                descCmd.Parameters.AddWithValue("@id", id);
+                descCmd.ExecuteNonQuery();
+                SqlDataAdapter descda = new SqlDataAdapter(descCmd);
+                DataTable descdt = new DataTable();
+                descda.Fill(descdt);
+                
+                foreach(DataRow dr in descdt.Rows)
+                {
+                    supervisorName.Add(dr["FIRST_NAME"].ToString().TrimEnd(' ') + " " + dr["LAST_NAME"].ToString().TrimEnd(' '));
+                }
+            }
+
+            database.close();
+
+            for(int i = 0; i < requestID.Count; i++)
+            {
+                ListViewItem item = new ListViewItem(requestID[i].ToString());
+                item.SubItems.Add(supervisorName[i]);
+                requestListView.Items.Add(item);
+            }
+        }
+
+        private void RefreshListViews()
+        {
+            requestListView.Items.Clear();
+
+            List<int> requestID = new List<int>();
+            List<int> supervisorID = new List<int>();
+            List<string> supervisorName = new List<string>();
+
+            SqlConnection cnn = new SqlConnection();
+            DBcnn database = new DBcnn(cnn);
+            database.connect(null);
+            database.open();
+            SqlCommand cmd = new SqlCommand("SELECT REQUEST_ID, SUPERVISOR FROM REQUEST WHERE COUNTER = 2", cnn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            database.close();
+            foreach (DataRow dr in dt.Rows)
+            {
+                requestID.Add(Convert.ToInt32(dr["REQUEST_ID"]));
+                supervisorID.Add(Convert.ToInt32(dr["SUPERVISOR"]));
+            }
+
+            database.open();
+
+            foreach (int id in supervisorID)
+            {
+                SqlCommand descCmd = new SqlCommand("SELECT FIRST_NAME, LAST_NAME FROM EMPLOYEES WHERE EMPLOYEE_ID=@id", cnn);
+                descCmd.Parameters.AddWithValue("@id", id);
+                descCmd.ExecuteNonQuery();
+                SqlDataAdapter descda = new SqlDataAdapter(descCmd);
+                DataTable descdt = new DataTable();
+                descda.Fill(descdt);
+
+                foreach (DataRow dr in descdt.Rows)
+                {
+                    supervisorName.Add(dr["FIRST_NAME"].ToString().TrimEnd(' ') + " " + dr["LAST_NAME"].ToString().TrimEnd(' '));
+                }
+            }
+
+            database.close();
+
+            for (int i = 0; i < requestID.Count; i++)
+            {
+                ListViewItem item = new ListViewItem(requestID[i].ToString());
+                item.SubItems.Add(supervisorName[i]);
+                requestListView.Items.Add(item);
+            }
+        }
+
+        private void logOutButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you would like to log out?", "Logout", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

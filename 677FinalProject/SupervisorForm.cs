@@ -275,7 +275,11 @@ namespace _677FinalProject
 
         private void logOutButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show("Are you sure you would like to log out?", "Logout", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)

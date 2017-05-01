@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.itemsListView = new System.Windows.Forms.ListView();
+            this.Complete = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.desription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buildItemButton = new System.Windows.Forms.Button();
             this.confirmRequestButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
-            this.Complete = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // itemsListView
@@ -54,6 +54,11 @@
             this.itemsListView.TabIndex = 4;
             this.itemsListView.UseCompatibleStateImageBehavior = false;
             this.itemsListView.View = System.Windows.Forms.View.Details;
+            // 
+            // Complete
+            // 
+            this.Complete.Text = "Complete";
+            this.Complete.Width = 91;
             // 
             // id
             // 
@@ -91,6 +96,7 @@
             this.confirmRequestButton.TabIndex = 19;
             this.confirmRequestButton.Text = "Confirm Request Build";
             this.confirmRequestButton.UseVisualStyleBackColor = true;
+            this.confirmRequestButton.Click += new System.EventHandler(this.confirmRequestButton_Click);
             // 
             // closeButton
             // 
@@ -101,11 +107,7 @@
             this.closeButton.TabIndex = 20;
             this.closeButton.Text = "Close";
             this.closeButton.UseVisualStyleBackColor = true;
-            // 
-            // Complete
-            // 
-            this.Complete.Text = "Complete";
-            this.Complete.Width = 91;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // BuildTeamViewRequestForm
             // 
