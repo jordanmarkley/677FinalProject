@@ -31,13 +31,13 @@
             this.logOutButton = new System.Windows.Forms.Button();
             this.viewRequestButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.newRequestListView = new System.Windows.Forms.ListView();
             this.requestID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.inPogressRequestListView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.completeRequestButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // logOutButton
@@ -72,36 +72,38 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Requests:";
             // 
-            // listView1
+            // newRequestListView
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.newRequestListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.requestID});
-            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(41, 64);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(120, 242);
-            this.listView1.TabIndex = 4;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.newRequestListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newRequestListView.FullRowSelect = true;
+            this.newRequestListView.GridLines = true;
+            this.newRequestListView.Location = new System.Drawing.Point(41, 64);
+            this.newRequestListView.Name = "newRequestListView";
+            this.newRequestListView.Size = new System.Drawing.Size(120, 242);
+            this.newRequestListView.TabIndex = 4;
+            this.newRequestListView.UseCompatibleStateImageBehavior = false;
+            this.newRequestListView.View = System.Windows.Forms.View.Details;
             // 
             // requestID
             // 
             this.requestID.Text = "Request ID";
             this.requestID.Width = 113;
             // 
-            // listView2
+            // inPogressRequestListView
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.inPogressRequestListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
-            this.listView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView2.GridLines = true;
-            this.listView2.Location = new System.Drawing.Point(239, 64);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(119, 242);
-            this.listView2.TabIndex = 8;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
+            this.inPogressRequestListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inPogressRequestListView.FullRowSelect = true;
+            this.inPogressRequestListView.GridLines = true;
+            this.inPogressRequestListView.Location = new System.Drawing.Point(239, 64);
+            this.inPogressRequestListView.Name = "inPogressRequestListView";
+            this.inPogressRequestListView.Size = new System.Drawing.Size(119, 242);
+            this.inPogressRequestListView.TabIndex = 8;
+            this.inPogressRequestListView.UseCompatibleStateImageBehavior = false;
+            this.inPogressRequestListView.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -129,29 +131,30 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "In Progress Requests:";
             // 
-            // button1
+            // completeRequestButton
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(41, 312);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 50);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Complete Request";
-            this.button1.UseVisualStyleBackColor = true;
+            this.completeRequestButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.completeRequestButton.Location = new System.Drawing.Point(41, 312);
+            this.completeRequestButton.Name = "completeRequestButton";
+            this.completeRequestButton.Size = new System.Drawing.Size(120, 50);
+            this.completeRequestButton.TabIndex = 11;
+            this.completeRequestButton.Text = "Complete Request";
+            this.completeRequestButton.UseVisualStyleBackColor = true;
+            this.completeRequestButton.Click += new System.EventHandler(this.completeRequestButton_Click);
             // 
             // SupervisorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(459, 453);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.completeRequestButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.listView2);
+            this.Controls.Add(this.inPogressRequestListView);
             this.Controls.Add(this.logOutButton);
             this.Controls.Add(this.viewRequestButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.newRequestListView);
             this.Name = "SupervisorForm";
             this.Text = "SupervisorForm";
             this.ResumeLayout(false);
@@ -164,12 +167,12 @@
         private System.Windows.Forms.Button logOutButton;
         private System.Windows.Forms.Button viewRequestButton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView newRequestListView;
         private System.Windows.Forms.ColumnHeader requestID;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView inPogressRequestListView;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button completeRequestButton;
     }
 }

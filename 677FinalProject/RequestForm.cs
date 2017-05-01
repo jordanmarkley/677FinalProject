@@ -13,17 +13,30 @@ namespace _677FinalProject
 {
     public partial class RequestForm : Form
     {
-        public RequestForm()
+        //Variables
+        private List<SoftwareHardware> itemList = new List<SoftwareHardware>();
+        private int counter = 0;
+        private int requestID;
+        RequestItemsForm ri;
+
+        public RequestForm(int id)
         {
             InitializeComponent();
+
+            requestID = id;
+
+            ri = new RequestItemsForm(requestID);
 
             FillList();
         }
 
-        //Variables
-        private RequestItemsForm ri = new RequestItemsForm();
-        private List<SoftwareHardware> itemList = new List<SoftwareHardware>();
-        private int counter = 0;
+        public int RequestID
+        {
+            get
+            {
+                return requestID;
+            }
+        }
 
         //Fill the List view with the updated information in the SOFTWAREHARDWARE table in the
         //database each time the form is loaded so that the most recent info can be loaded each time.
@@ -75,6 +88,14 @@ namespace _677FinalProject
 
             //update totals
             ri.updateTotals();
+        }
+
+        public string EmployeeNameLabel
+        {
+            set
+            {
+                employeeNameLabel.Text = value;
+            }
         }
     }
 }

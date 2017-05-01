@@ -9,11 +9,91 @@ namespace _677FinalProject
     class LineItem
     {
         //Variables
+        private int lineItemID;
+        private int reqID;
         private int softwareHardwareID;
         private int quantity;
-        private decimal price;
-        private int reqID;
+        private decimal itemPrice;
+        private decimal lineTotal;
 
+        public LineItem(int rID, int softID, int q, decimal p, decimal t)
+        {
+            lineItemID = Convert.ToInt32(rID.ToString() + softID.ToString());
+            reqID = rID;
+            softwareHardwareID = softID;
+            quantity = q;
+            itemPrice = p;
+            lineTotal = t;
+        }
+        public int LineItemID
+        {
+            get
+            {
+                return lineItemID;
+            }
+            set
+            {
+                lineItemID = value;
+            }
+        }
 
+        public int RequestID
+        {
+            get
+            {
+                return reqID;
+            }
+            set
+            {
+                reqID = value;
+            }
+        }
+        public int ItemID
+        {
+            get
+            {
+                return softwareHardwareID;
+            }
+            set
+            {
+                softwareHardwareID = value;
+            }
+        }
+
+        public int Quantity
+        {
+            get
+            {
+                return quantity;
+            }
+            set
+            {
+                quantity = value;
+            }
+        }
+
+        public decimal ItemPrice
+        {
+            get
+            {
+                return itemPrice;
+            }
+            set
+            {
+                itemPrice = value;
+            }
+        }
+
+        public decimal LineTotal
+        {
+            get
+            {
+                return lineTotal;
+            }
+            set
+            {
+                lineTotal = value;
+            }
+        }
     }
 }

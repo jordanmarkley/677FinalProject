@@ -65,7 +65,7 @@ namespace _677FinalProject
             }
             else if(title == "Supervisor")
             {
-                SupervisorForm s = new SupervisorForm();
+                SupervisorForm s = new SupervisorForm(Convert.ToInt32(_empid));
                 s.ShowDialog();
             }
             else if(title == "HR Rep")

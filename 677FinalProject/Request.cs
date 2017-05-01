@@ -72,6 +72,18 @@ namespace _677FinalProject
             status = s;
         }
 
+        public Request(int rID, int sID, int eID, decimal sub, decimal tax, decimal price, string d)
+        {
+            reqID = rID;
+            supID = sID;
+            empID = eID;
+            status = 1;
+            subtotal = sub;
+            salesTax = tax;
+            totalPrice = price;
+            date = d;
+        }
+
         //Getters and setters for variables
         public int RequestID
         {
