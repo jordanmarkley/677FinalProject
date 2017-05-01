@@ -16,5 +16,17 @@ namespace _677FinalProject
         {
             InitializeComponent();
         }
+
+        public ListView RequestListView
+        {
+            get
+            {
+                return requestListView;
+            }
+            set
+            {
+                requestListView = value;
+            }
+        }
     }
 }

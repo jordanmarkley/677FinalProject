@@ -27,32 +27,6 @@ namespace _677FinalProject
             FillCompletedRequestListView();
         }
 
-        public ListView NewRequestListView
-        {
-            get
-            {
-                return newRequestListView;
-            }
-
-            set
-            {
-                newRequestListView = value;
-            }
-        }
-
-        public ListView inProgressRequestListView
-        {
-            get
-            {
-                return inProgressRequestListView;
-            }
-
-            set
-            {
-                inProgressRequestListView = value;
-            }
-        }
-
         //Initially fill the New Requests Waiting for the supervisor
         private void FillNewRequestListView()
         {
@@ -105,6 +79,7 @@ namespace _677FinalProject
             int supId = supID;
             string date = null;
             int status = 0;
+            ListViewItem item = newRequestListView.SelectedItems[0];
 
             if (newRequestListView.SelectedItems.Count == 1)
             {
@@ -142,11 +117,7 @@ namespace _677FinalProject
 
                     r.ShowDialog();
 
-                    int rID = r.RequestID;
-
-                    ListViewItem i = new ListViewItem(rID.ToString());
-                    newRequestListView.Items.Remove(i);
-                    inProgressRequestListView.Items.Add(i);
+                    RefreshListViews();
                 }
             }
             else
@@ -157,7 +128,81 @@ namespace _677FinalProject
 
         private void viewRequestButton_Click(object sender, EventArgs e)
         {
-            
+            SupervisorViewRequestForm viewRequestForm = new SupervisorViewRequestForm();
+            List<LineItem> request = new List<LineItem>();
+            List<int> idForDescription = new List<int>();
+            List<string> descriptionList = new List<string>();
+            int requestID = 0;
+            int itemID = 0;
+            int quantity = 0;
+            string description = null;
+            decimal price = 0;
+            decimal lineTotal = 0;
+
+            if(inPogressRequestListView.SelectedItems.Count == 1)
+            {
+                foreach(ListViewItem i in inPogressRequestListView.SelectedItems)
+                {
+                    requestID = Convert.ToInt32(i.SubItems[0].Text);
+                }
+                SqlConnection cnn = new SqlConnection();
+                DBcnn database = new DBcnn(cnn);
+                database.connect(null);
+                database.open();
+                SqlCommand cmd = new SqlCommand("SELECT QUANTITY, ITEM_ID, UNIT_PRICE, LINE_TOTAL FROM LINE_ORDER WHERE REQUEST_ID = @requestID", cnn);
+                cmd.Parameters.AddWithValue("@requestID", requestID);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                database.close();
+                foreach(DataRow dr in dt.Rows)
+                {
+                    quantity = Convert.ToInt32(dr["QUANTITY"]);
+                    itemID = Convert.ToInt32(dr["ITEM_ID"]);
+                    price = Convert.ToDecimal(dr["UNIT_PRICE"]);
+                    lineTotal = Convert.ToDecimal(dr["LINE_TOTAL"]);
+
+                    LineItem item = new LineItem(requestID, itemID, quantity, price, lineTotal);
+
+                    request.Add(item);
+                }
+
+                foreach(LineItem item in request)
+                {
+                    idForDescription.Add(item.ItemID);
+                }
+
+                foreach(int id in idForDescription)
+                {
+                    database.connect(null);
+                    database.open();
+                    SqlCommand descriptionCmd = new SqlCommand("SELECT DESCRIPTION FROM SOFTWAREHARDWARE WHERE ITEM_ID = @id", cnn);
+                    descriptionCmd.Parameters.AddWithValue("@id", id);
+                    descriptionCmd.ExecuteNonQuery();
+                    SqlDataAdapter descriptionda = new SqlDataAdapter(descriptionCmd);
+                    DataTable descriptiondt = new DataTable();
+                    descriptionda.Fill(descriptiondt);
+                    database.close();
+                    foreach(DataRow dr in descriptiondt.Rows)
+                    {
+                        description = dr["DESCRIPTION"].ToString().TrimEnd(' ');
+
+                        descriptionList.Add(description);
+                    }
+                }
+
+                for(int i = 0; i < request.Count; i++)
+                {
+                    ListViewItem item = new ListViewItem(request[i].Quantity.ToString());
+                    item.SubItems.Add(descriptionList[i]);
+                    item.SubItems.Add(request[i].ItemPrice.ToString("C2"));
+                    item.SubItems.Add(request[i].LineTotal.ToString("C2"));
+
+                    viewRequestForm.RequestListView.Items.Add(item);
+                }
+                viewRequestForm.Show();
+            }
         }
 
         //Retreives the employee's name based off of their employee ID
@@ -182,6 +227,50 @@ namespace _677FinalProject
             }
 
             return employeeName;
+        }
+
+        //Refresh the listviews with items from the database
+        private void RefreshListViews()
+        {
+            int requestID;
+
+            newRequestListView.Items.Clear();
+            inPogressRequestListView.Items.Clear();
+
+            SqlConnection cnn = new SqlConnection();
+            DBcnn database = new DBcnn(cnn);
+            database.connect(null);
+            database.open();
+            SqlCommand cmd = new SqlCommand("SELECT REQUEST_ID FROM REQUEST WHERE SUPERVISOR=@supID AND COUNTER = 1", cnn);
+            cmd.Parameters.AddWithValue("@supID", supID);
+            cmd.ExecuteNonQuery();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            foreach(DataRow dr in dt.Rows)
+            {
+                requestID = Convert.ToInt32(dr["REQUEST_ID"]);
+
+                ListViewItem i = new ListViewItem(requestID.ToString());
+
+                newRequestListView.Items.Add(i);
+            }
+
+            SqlCommand newCmd = new SqlCommand("SELECT REQUEST_ID FROM REQUEST WHERE SUPERVISOR=@supID AND COUNTER = 2", cnn);
+            newCmd.Parameters.AddWithValue("@supID", supID);
+            newCmd.ExecuteNonQuery();
+            SqlDataAdapter newda = new SqlDataAdapter(newCmd);
+            DataTable newdt = new DataTable();
+            newda.Fill(newdt);
+            database.close();
+            foreach (DataRow dr in newdt.Rows)
+            {
+                requestID = Convert.ToInt32(dr["REQUEST_ID"]);
+
+                ListViewItem i = new ListViewItem(requestID.ToString());
+
+                inPogressRequestListView.Items.Add(i);
+            }
         }
 
         private void logOutButton_Click(object sender, EventArgs e)

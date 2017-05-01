@@ -25,7 +25,7 @@ namespace _677FinalProject
 
             requestID = id;
 
-            ri = new RequestItemsForm(requestID);
+            ri = new RequestItemsForm(requestID, this);
 
             FillList();
         }
@@ -74,20 +74,23 @@ namespace _677FinalProject
         //Add an item to request items list view
         private void addItemButton_Click(object sender, EventArgs e)
         {
-            //ensures that a fresh, new form is loaded
-            if (counter == 0)
+            if(requestListView.SelectedItems.Count == 1)
             {
-                ri.Show();
-                counter++;
-            }
+                //ensures that a fresh, new form is loaded
+                if (counter == 0)
+                {
+                    ri.Show();
+                    counter++;
+                }
 
-            foreach(ListViewItem i in requestListView.SelectedItems)
-            {
-                ri.RequestItemsListView.Items.Add((ListViewItem)i.Clone());
-            }
+                foreach (ListViewItem i in requestListView.SelectedItems)
+                {
+                    ri.RequestItemsListView.Items.Add((ListViewItem)i.Clone());
+                }
 
-            //update totals
-            ri.updateTotals();
+                //update totals
+                ri.updateTotals();
+            }
         }
 
         public string EmployeeNameLabel
@@ -96,6 +99,11 @@ namespace _677FinalProject
             {
                 employeeNameLabel.Text = value;
             }
+        }
+
+        private void doneButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -14,12 +14,15 @@ namespace _677FinalProject
     public partial class RequestItemsForm : Form
     {
         private int requestID;
+        private RequestForm requestForm;
 
-        public RequestItemsForm(int id)
+        public RequestItemsForm(int id, RequestForm rForm)
         {
             InitializeComponent();
 
             requestID = id;
+
+            requestForm = rForm;
         }
 
         public int RequestID
@@ -124,7 +127,7 @@ namespace _677FinalProject
                 {
                     foreach(LineItem item in request)
                     {
-                        if (request.Contains(item))
+                        if (item.ItemID == i)
                         {
                             item.Quantity++;
                             item.LineTotal = item.Quantity * item.ItemPrice;
@@ -153,9 +156,9 @@ namespace _677FinalProject
             updateDA.Fill(updateDT);
 
             int counter = 0;
-            decimal subtotal = Convert.ToDecimal(subtotalLabel.Text);
-            decimal salesTax = Convert.ToDecimal(salesTaxLabel.Text);
-            decimal totalPrice = Convert.ToDecimal(totalCostLabel.Text);
+            decimal subtotal = Convert.ToDecimal(subtotalLabel.Text.ToString().TrimStart('$'));
+            decimal salesTax = Convert.ToDecimal(salesTaxLabel.Text.ToString().TrimStart('$'));
+            decimal totalPrice = Convert.ToDecimal(totalCostLabel.Text.ToString().TrimStart('$'));
 
             foreach (DataRow dr in updateDT.Rows)
             {
@@ -167,13 +170,12 @@ namespace _677FinalProject
             insertNewDataCmd.Parameters.AddWithValue("@counter", counter);
             insertNewDataCmd.Parameters.AddWithValue("@subtotal", subtotal);
             insertNewDataCmd.Parameters.AddWithValue("@salesTax", salesTax);
-            insertNewDataCmd.Parameters.AddWithValue("@totalPrice", totalCostLabel);
+            insertNewDataCmd.Parameters.AddWithValue("@totalPrice", totalPrice);
             insertNewDataCmd.Parameters.AddWithValue("@reqID", requestID);
             insertNewDataCmd.ExecuteNonQuery();
 
-
-
-            Environment.Exit(0);
+            requestForm.Close();
+            this.Close();
         }
     }
 }

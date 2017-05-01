@@ -66,21 +66,6 @@
     </Compile>
     <Compile Include="DBcnn.cs" />
     <Compile Include="Employee.cs" />
-    <Compile Include="GROUP5DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GROUP5DataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="GROUP5DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GROUP5DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="GROUP5DataSetUSE.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GROUP5DataSetUSE.xsd</DependentUpon>
-    </Compile>
     <Compile Include="HRRepForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,39 +190,6 @@
     <EmbeddedResource Include="ViewNewHireForm.resx">
       <DependentUpon>ViewNewHireForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="GROUP5DataSet.xsc">
-      <DependentUpon>GROUP5DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="GROUP5DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GROUP5DataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GROUP5DataSet.xss">
-      <DependentUpon>GROUP5DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="GROUP5DataSet1.xsc">
-      <DependentUpon>GROUP5DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="GROUP5DataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GROUP5DataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GROUP5DataSet1.xss">
-      <DependentUpon>GROUP5DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="GROUP5DataSetUSE.xsc">
-      <DependentUpon>GROUP5DataSetUSE.xsd</DependentUpon>
-    </None>
-    <None Include="GROUP5DataSetUSE.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GROUP5DataSetUSE.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GROUP5DataSetUSE.xss">
-      <DependentUpon>GROUP5DataSetUSE.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

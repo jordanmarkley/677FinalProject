@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.addItemButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.doneButton = new System.Windows.Forms.Button();
             this.employeeNameLabel = new System.Windows.Forms.Label();
             this.desription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -59,15 +59,16 @@
             this.addItemButton.UseVisualStyleBackColor = true;
             this.addItemButton.Click += new System.EventHandler(this.addItemButton_Click);
             // 
-            // cancelButton
+            // doneButton
             // 
-            this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelButton.Location = new System.Drawing.Point(436, 395);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(146, 40);
-            this.cancelButton.TabIndex = 11;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
+            this.doneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.doneButton.Location = new System.Drawing.Point(436, 395);
+            this.doneButton.Name = "doneButton";
+            this.doneButton.Size = new System.Drawing.Size(146, 40);
+            this.doneButton.TabIndex = 11;
+            this.doneButton.Text = "Done";
+            this.doneButton.UseVisualStyleBackColor = true;
+            this.doneButton.Click += new System.EventHandler(this.doneButton_Click);
             // 
             // employeeNameLabel
             // 
@@ -116,7 +117,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 463);
             this.Controls.Add(this.employeeNameLabel);
-            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.doneButton);
             this.Controls.Add(this.addItemButton);
             this.Controls.Add(this.requestListView);
             this.Controls.Add(this.label1);
@@ -130,7 +131,7 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button addItemButton;
-        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button doneButton;
         private System.Windows.Forms.Label employeeNameLabel;
         private System.Windows.Forms.ColumnHeader desription;
         private System.Windows.Forms.ColumnHeader price;
