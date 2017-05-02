@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="_677FinalProject.BuildTeam" Collapsed="true">
+    <Position X="7.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIgAAAAARCACAAAAAACAABACAAAAAAAAAAIAAAAAAAI=</HashCode>
+      <FileName>BuildTeam.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_677FinalProject.BuildTeamViewRequestForm" Collapsed="true">
+    <Position X="6.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAEGRCAAAAIAgACAAAACAAAAAAAAAQAAAAIAAhA=</HashCode>
+      <FileName>BuildTeamViewRequestForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_677FinalProject.CheckSuperiorForm" Collapsed="true">
+    <Position X="4.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAAAACAAIECAAAIAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>CheckSuperiorForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_677FinalProject.DBcnn" Collapsed="true">
+    <Position X="3.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgCAAAAAAAAAAAAAAAIAAAAAABAA=</HashCode>
+      <FileName>DBcnn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_677FinalProject.Employee" Collapsed="true">
+    <Position X="5.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAIAAAEQAhIAAAAAAEAgACAIAAAAgAAAAAQCAAAAAI=</HashCode>
+      <FileName>Employee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_677FinalProject.HRRepForm" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAhAAIAADCACABAACACAABCCAEAIAgBAAEIEAAAAYAI=</HashCode>
+      <FileName>HRRepForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_677FinalProject.HRViewRequestForm" Collapsed="true">
+    <Position X="7.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAQAACIAAACAEIQAABBEAAAAQAAABA=</HashCode>
+      <FileName>HRViewRequestForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_677FinalProject.LineItem" Collapsed="true">
+    <Position X="1.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAEAAAIJAAACCQAgAAAAAAAAAAAAACAAAAAgAAAAAA=</HashCode>
+      <FileName>LineItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_677FinalProject.Login" Collapsed="true">
+    <Position X="3.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADBAA=</HashCode>
+      <FileName>Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_677FinalProject.LoginForm" Collapsed="true">
+    <Position X="5.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAASAAAhAAAACAAAEiAAQIAAACAEAAAgAAAAA=</HashCode>
+      <FileName>LoginForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_677FinalProject.ManagerForm" Collapsed="true">
+    <Position X="4" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAgEAAAARCACABAAAACAEBACAAAAAAAAAAIAAAAAAAI=</HashCode>
+      <FileName>ManagerForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_677FinalProject.ManagerViewRequestForm" Collapsed="true">
+    <Position X="2.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIABAAECJCQCABAAAACAIBACAAAQAACAAAAQAAAgAAA=</HashCode>
+      <FileName>ManagerViewRequestForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_677FinalProject.NewHire" Collapsed="true">
+    <Position X="2" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAIAAAAAQAAAAAAIgAgCAACIgg=</HashCode>
+      <FileName>NewHire.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_677FinalProject.Program" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_677FinalProject.Request" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAYEAAQEAAgEAAQAAAAAAABAAAAAQAAhAQAAAQgAAAA=</HashCode>
+      <FileName>Request.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_677FinalProject.RequestForm" Collapsed="true">
+    <Position X="7.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAACRCAACByAAACAABACAAAAAAEAQQAgAAAIAgA=</HashCode>
+      <FileName>RequestForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_677FinalProject.RequestItemsForm" Collapsed="true">
+    <Position X="4" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAACRCAQBBQIAACACAACQAAAABAACAAAAAFAAgA=</HashCode>
+      <FileName>RequestItemsForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_677FinalProject.SoftwareHardware" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAQCgAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SoftwareHardware.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_677FinalProject.SupervisorForm" Collapsed="true">
+    <Position X="6" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YAgAAAQADCACABAAAACAEAAiggCAAAAgAAIAAAAAAAA=</HashCode>
+      <FileName>SupervisorForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_677FinalProject.SupervisorViewRequestForm" Collapsed="true">
+    <Position X="6" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAACICAAAAAAIACAABACAAAQAAAAAAAAAEAAAAQ=</HashCode>
+      <FileName>SupervisorViewRequestForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_677FinalProject.ViewNewHireForm" Collapsed="true">
+    <Position X="2.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIACACAAAhAEAACIAIACCACAAAAEAIAAAACAAAA=</HashCode>
+      <FileName>ViewNewHireForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_677FinalProject.Properties.Resources" Collapsed="true">
+    <Position X="7.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_677FinalProject.Properties.Settings" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAIAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
