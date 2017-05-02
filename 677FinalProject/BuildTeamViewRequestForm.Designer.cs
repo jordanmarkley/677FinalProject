@@ -119,7 +119,7 @@
             this.Controls.Add(this.buildItemButton);
             this.Controls.Add(this.itemsListView);
             this.Name = "BuildTeamViewRequestForm";
-            this.Text = "BuildTeamViewRequestForm";
+            this.Text = "View Request";
             this.ResumeLayout(false);
 
         }

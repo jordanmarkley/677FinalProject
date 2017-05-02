@@ -91,6 +91,10 @@ namespace _677FinalProject
                 //update totals
                 ri.updateTotals();
             }
+            else
+            {
+                MessageBox.Show("Please Select an Item");
+            }
         }
 
         public string EmployeeNameLabel

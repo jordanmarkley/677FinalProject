@@ -90,7 +90,7 @@
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.requestListView);
             this.Name = "SupervisorViewRequestForm";
-            this.Text = "SupervisorViewRequestForm";
+            this.Text = "View Request";
             this.ResumeLayout(false);
 
         }

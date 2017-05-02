@@ -156,7 +156,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.newRequestListView);
             this.Name = "SupervisorForm";
-            this.Text = "SupervisorForm";
+            this.Text = "Supervisor";
             this.ResumeLayout(false);
             this.PerformLayout();
 

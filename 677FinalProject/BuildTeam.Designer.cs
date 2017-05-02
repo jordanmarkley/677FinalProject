@@ -91,7 +91,7 @@
             this.Controls.Add(this.viewRequestButton);
             this.Controls.Add(this.requestListView);
             this.Name = "BuildTeam";
-            this.Text = "BuildTeam";
+            this.Text = "Build Team";
             this.ResumeLayout(false);
 
         }

@@ -180,7 +180,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ViewNewHireForm";
-            this.Text = "ViewNewHireForm";
+            this.Text = "New Hire";
             this.ResumeLayout(false);
             this.PerformLayout();
 

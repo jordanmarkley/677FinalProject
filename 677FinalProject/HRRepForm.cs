@@ -42,75 +42,79 @@ namespace _677FinalProject
                 {
                     requestId = Convert.ToInt32(i.SubItems[0].Text);
                 }
+
+                SqlConnection cnn = new SqlConnection();
+                DBcnn database = new DBcnn(cnn);
+                database.connect(null);
+                database.open();
+                SqlCommand cmd = new SqlCommand(@"SELECT REQUEST_ID, COUNTER, DATE, SUPERVISOR, EMPLOYEE_ID FROM REQUEST 
+                                        WHERE REQUEST_ID=@requestId", cnn);
+                cmd.Parameters.AddWithValue("@requestId", requestId);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    counter = Convert.ToInt32(dr["COUNTER"]);
+                    date = dr["DATE"].ToString();
+                    supervisorId = Convert.ToInt32(dr["SUPERVISOR"]);
+                    employeeId = Convert.ToInt32(dr["EMPLOYEE_ID"]);
+                }
+
+                SqlCommand supervisorCmd = new SqlCommand(@"SELECT FIRST_NAME, LAST_NAME FROM EMPLOYEES WHERE EMPLOYEE_ID=@supervisorId", cnn);
+                supervisorCmd.Parameters.AddWithValue("@supervisorId", supervisorId);
+                supervisorCmd.ExecuteNonQuery();
+                SqlDataAdapter supDA = new SqlDataAdapter(supervisorCmd);
+                DataTable supDT = new DataTable();
+                supDA.Fill(supDT);
+                foreach (DataRow dr in supDT.Rows)
+                {
+                    supervisorName = dr["FIRST_NAME"].ToString() + " " + dr["LAST_NAME"].ToString();
+                }
+
+                SqlCommand employeeCmd = new SqlCommand(@"SELECT FIRST_NAME, LAST_NAME FROM EMPLOYEES WHERE EMPLOYEE_ID=@employeeId", cnn);
+                employeeCmd.Parameters.AddWithValue("@employeeId", employeeId);
+                employeeCmd.ExecuteNonQuery();
+                SqlDataAdapter empDA = new SqlDataAdapter(employeeCmd);
+                DataTable empDT = new DataTable();
+                empDA.Fill(empDT);
+                database.close();
+                foreach (DataRow dr in empDT.Rows)
+                {
+                    employeeName = dr["FIRST_NAME"].ToString() + " " + dr["LAST_NAME"].ToString();
+                }
+
+                HRViewRequestForm hrv = new HRViewRequestForm();
+
+                hrv.RequestIDLabel = requestId.ToString();
+                hrv.EmployeeLabel = employeeName;
+                hrv.SupervisorLabel = supervisorName;
+                hrv.RequestDateLabel = date;
+                if (counter == 1)
+                {
+                    hrv.StatusLabel = "Awaiting Supervisor to choose Items";
+                }
+                else if (counter == 2)
+                {
+                    hrv.StatusLabel = "Awaiting Manager approval";
+                }
+                else if (counter == 3)
+                {
+                    hrv.StatusLabel = "Request Being Build";
+                }
+                else if (counter == 4)
+                {
+                    hrv.StatusLabel = "Request Complete";
+                }
+
+                hrv.ShowDialog();
             }
             else
             {
                 MessageBox.Show("Please select an employee");
             }
-
-            SqlConnection cnn = new SqlConnection();
-            DBcnn database = new DBcnn(cnn);
-            database.connect(null);
-            database.open();
-            SqlCommand cmd = new SqlCommand(@"SELECT REQUEST_ID, COUNTER, DATE, SUPERVISOR, EMPLOYEE_ID FROM REQUEST 
-                                        WHERE REQUEST_ID=@requestId", cnn);
-            cmd.Parameters.AddWithValue("@requestId", requestId);
-            cmd.ExecuteNonQuery();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            foreach (DataRow dr in dt.Rows)
-            {
-                counter = Convert.ToInt32(dr["COUNTER"]);
-                date = dr["DATE"].ToString();
-                supervisorId = Convert.ToInt32(dr["SUPERVISOR"]);
-                employeeId = Convert.ToInt32(dr["EMPLOYEE_ID"]);
-            }
-
-            SqlCommand supervisorCmd = new SqlCommand(@"SELECT FIRST_NAME, LAST_NAME FROM EMPLOYEES WHERE EMPLOYEE_ID=@supervisorId", cnn);
-            supervisorCmd.Parameters.AddWithValue("@supervisorId", supervisorId);
-            supervisorCmd.ExecuteNonQuery();
-            SqlDataAdapter supDA = new SqlDataAdapter(supervisorCmd);
-            DataTable supDT = new DataTable();
-            supDA.Fill(supDT);
-            foreach (DataRow dr in supDT.Rows)
-            {
-                supervisorName = dr["FIRST_NAME"].ToString() + " " + dr["LAST_NAME"].ToString();
-            }
-
-            SqlCommand employeeCmd = new SqlCommand(@"SELECT FIRST_NAME, LAST_NAME FROM EMPLOYEES WHERE EMPLOYEE_ID=@employeeId", cnn);
-            employeeCmd.Parameters.AddWithValue("@employeeId", employeeId);
-            employeeCmd.ExecuteNonQuery();
-            SqlDataAdapter empDA = new SqlDataAdapter(employeeCmd);
-            DataTable empDT = new DataTable();
-            empDA.Fill(empDT);
-            database.close();
-            foreach (DataRow dr in empDT.Rows)
-            {
-                employeeName = dr["FIRST_NAME"].ToString() + " " + dr["LAST_NAME"].ToString();
-            }
-
-            HRViewRequestForm hrv = new HRViewRequestForm();
-
-            hrv.RequestIDLabel = requestId.ToString();
-            hrv.EmployeeLabel = employeeName;
-            hrv.SupervisorLabel = supervisorName;
-            hrv.RequestDateLabel = date;
-            if (counter == 1)
-            {
-                hrv.StatusLabel = "Awaiting Supervisor to choose Items";
-            }
-            else if (counter == 2)
-            {
-                hrv.StatusLabel = "Awaiting Manager approval";
-            }
-            else if (counter == 3)
-            {
-                hrv.StatusLabel = "Request Being Build";
-            }
-
-            hrv.ShowDialog();
         }
 
         //Initially fill the listview with employees
@@ -249,6 +253,10 @@ namespace _677FinalProject
                 {
                     i.SubItems.Add("Request Being Build");
                 }
+                else if (status == 4)
+                {
+                    i.SubItems.Add("Request Complete");
+                }
                 requestListView.Items.Add(i);
             }
         }
@@ -295,6 +303,10 @@ namespace _677FinalProject
             {
                 i.SubItems.Add("Request Being Build");
             }
+            else if (stat == 4)
+            {
+                i.SubItems.Add("Request Complete");
+            }
             requestListView.Items.Add(i);
         }
 
@@ -309,52 +321,52 @@ namespace _677FinalProject
                 {
                     id = Convert.ToInt32(i.SubItems[0].Text);
                 }
+
+                SqlConnection cnn = new SqlConnection();
+                DBcnn database = new DBcnn(cnn);
+                database.connect(null);
+                database.open();
+                SqlCommand cmd = new SqlCommand(@"SELECT EMPLOYEE_ID, FIRST_NAME, LAST_NAME, TITLE,  DATE_OF_BIRTH, BACKGROUND, GENDER FROM EMPLOYEES 
+                                        WHERE EMPLOYEE_ID=@id", cnn);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                database.close();
+
+                string firstName = null;
+                string lastName = null;
+                string title = null;
+                string dateOfBirth = null;
+                string background = null;
+                string gender = null;
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    firstName = dr["FIRST_NAME"].ToString();
+                    lastName = dr["LAST_NAME"].ToString();
+                    title = dr["TITLE"].ToString();
+                    dateOfBirth = dr["DATE_OF_BIRTH"].ToString();
+                    background = dr["BACKGROUND"].ToString();
+                    gender = dr["GENDER"].ToString();
+                }
+
+                ViewNewHireForm newHireForm = new ViewNewHireForm();
+
+                newHireForm.EmployeeIDLabel = id.ToString();
+                newHireForm.NameLabel = firstName.TrimEnd(' ') + " " + lastName.TrimEnd(' ');
+                newHireForm.TitleLabel = title;
+                newHireForm.DateOfBirthLabel = dateOfBirth;
+                newHireForm.BackgroundStatusLabel = background;
+                newHireForm.GenderLabel = gender;
+
+                newHireForm.ShowDialog();
             }
             else
             {
                 MessageBox.Show("Please select an employee");
             }
-
-            SqlConnection cnn = new SqlConnection();
-            DBcnn database = new DBcnn(cnn);
-            database.connect(null);
-            database.open();
-            SqlCommand cmd = new SqlCommand(@"SELECT EMPLOYEE_ID, FIRST_NAME, LAST_NAME, TITLE,  DATE_OF_BIRTH, BACKGROUND, GENDER FROM EMPLOYEES 
-                                        WHERE EMPLOYEE_ID=@id", cnn);
-            cmd.Parameters.AddWithValue("@id", id);
-            cmd.ExecuteNonQuery();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            database.close();
-
-            string firstName = null;
-            string lastName = null;
-            string title = null;
-            string dateOfBirth = null;
-            string background = null;
-            string gender = null;
-
-            foreach (DataRow dr in dt.Rows)
-            {
-                firstName = dr["FIRST_NAME"].ToString();
-                lastName = dr["LAST_NAME"].ToString();
-                title = dr["TITLE"].ToString();
-                dateOfBirth = dr["DATE_OF_BIRTH"].ToString();
-                background = dr["BACKGROUND"].ToString();
-                gender = dr["GENDER"].ToString();
-            }
-
-            ViewNewHireForm newHireForm = new ViewNewHireForm();
-
-            newHireForm.EmployeeIDLabel = id.ToString();
-            newHireForm.NameLabel = firstName.TrimEnd(' ') + " " + lastName.TrimEnd(' ');
-            newHireForm.TitleLabel = title;
-            newHireForm.DateOfBirthLabel = dateOfBirth;
-            newHireForm.BackgroundStatusLabel = background;
-            newHireForm.GenderLabel = gender;
-
-            newHireForm.ShowDialog();
         }
 
         private void logOutButton_Click(object sender, EventArgs e)
