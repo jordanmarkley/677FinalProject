@@ -79,7 +79,6 @@ namespace _677FinalProject
             int supId = supID;
             string date = null;
             int status = 0;
-            ListViewItem item = newRequestListView.SelectedItems[0];
 
             if (newRequestListView.SelectedItems.Count == 1)
             {
@@ -122,10 +121,11 @@ namespace _677FinalProject
             }
             else
             {
-                MessageBox.Show("Please Select an Employee");
+                MessageBox.Show("Please Select a Request.");
             }
         }
 
+        //Handler for the view request button
         private void viewRequestButton_Click(object sender, EventArgs e)
         {
             SupervisorViewRequestForm viewRequestForm = new SupervisorViewRequestForm();
@@ -203,6 +203,10 @@ namespace _677FinalProject
                 }
                 viewRequestForm.Show();
             }
+            else
+            {
+                MessageBox.Show("Please select a Request.");
+            }
         }
 
         //Retreives the employee's name based off of their employee ID
@@ -273,6 +277,7 @@ namespace _677FinalProject
             }
         }
 
+        //Handler for the log out button
         private void logOutButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you would like to log out?", "Logout", MessageBoxButtons.YesNo);

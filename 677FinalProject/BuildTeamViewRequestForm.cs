@@ -13,6 +13,7 @@ namespace _677FinalProject
 {
     public partial class BuildTeamViewRequestForm : Form
     {
+        //Variables
         private int requestID = 0;
         private int buttonCounter = 0;
 
@@ -25,6 +26,7 @@ namespace _677FinalProject
             FillListView();
         }
 
+        //Initially fill the list view
         private void FillListView()
         {
             int quantity = 0;
@@ -85,6 +87,7 @@ namespace _677FinalProject
             }
         }
 
+        //Handler for the build item button
         private void buildItemButton_Click(object sender, EventArgs e)
         {
 
@@ -101,6 +104,7 @@ namespace _677FinalProject
             }
         }
 
+        //Handler for the confirm request button
         private void confirmRequestButton_Click(object sender, EventArgs e)
         {
             SqlConnection cnn = new SqlConnection();
@@ -114,6 +118,7 @@ namespace _677FinalProject
             this.Close();
         }
 
+        //Handler for the close button
         private void closeButton_Click(object sender, EventArgs e)
         {
             this.Close();

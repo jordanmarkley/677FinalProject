@@ -369,6 +369,7 @@ namespace _677FinalProject
             }
         }
 
+        //Handler for the log out button
         private void logOutButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you would like to log out?", "Logout", MessageBoxButtons.YesNo);

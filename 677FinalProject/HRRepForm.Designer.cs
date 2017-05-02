@@ -65,7 +65,7 @@
             this.requestListView.GridLines = true;
             this.requestListView.Location = new System.Drawing.Point(27, 57);
             this.requestListView.Name = "requestListView";
-            this.requestListView.Size = new System.Drawing.Size(379, 167);
+            this.requestListView.Size = new System.Drawing.Size(613, 167);
             this.requestListView.TabIndex = 2;
             this.requestListView.UseCompatibleStateImageBehavior = false;
             this.requestListView.View = System.Windows.Forms.View.Details;
@@ -78,19 +78,19 @@
             // requestSupervisor
             // 
             this.requestSupervisor.Text = "Supervisor";
-            this.requestSupervisor.Width = 156;
+            this.requestSupervisor.Width = 113;
             // 
             // requestStatus
             // 
             this.requestStatus.Text = "Status";
-            this.requestStatus.Width = 101;
+            this.requestStatus.Width = 200;
             // 
             // viewRequestButton
             // 
             this.viewRequestButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewRequestButton.Location = new System.Drawing.Point(260, 234);
+            this.viewRequestButton.Location = new System.Drawing.Point(463, 230);
             this.viewRequestButton.Name = "viewRequestButton";
-            this.viewRequestButton.Size = new System.Drawing.Size(146, 40);
+            this.viewRequestButton.Size = new System.Drawing.Size(177, 40);
             this.viewRequestButton.TabIndex = 4;
             this.viewRequestButton.Text = "View Request";
             this.viewRequestButton.UseVisualStyleBackColor = true;
@@ -99,9 +99,9 @@
             // logOutButton
             // 
             this.logOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logOutButton.Location = new System.Drawing.Point(260, 557);
+            this.logOutButton.Location = new System.Drawing.Point(463, 542);
             this.logOutButton.Name = "logOutButton";
-            this.logOutButton.Size = new System.Drawing.Size(146, 40);
+            this.logOutButton.Size = new System.Drawing.Size(177, 40);
             this.logOutButton.TabIndex = 6;
             this.logOutButton.Text = "Log Out";
             this.logOutButton.UseVisualStyleBackColor = true;
@@ -118,7 +118,7 @@
             this.employeeListView.GridLines = true;
             this.employeeListView.Location = new System.Drawing.Point(27, 314);
             this.employeeListView.Name = "employeeListView";
-            this.employeeListView.Size = new System.Drawing.Size(379, 167);
+            this.employeeListView.Size = new System.Drawing.Size(613, 167);
             this.employeeListView.TabIndex = 7;
             this.employeeListView.UseCompatibleStateImageBehavior = false;
             this.employeeListView.View = System.Windows.Forms.View.Details;
@@ -131,12 +131,12 @@
             // employeeName
             // 
             this.employeeName.Text = "Employee";
-            this.employeeName.Width = 156;
+            this.employeeName.Width = 160;
             // 
             // background
             // 
             this.background.Text = "Pass/Fail";
-            this.background.Width = 101;
+            this.background.Width = 150;
             // 
             // label2
             // 
@@ -151,7 +151,7 @@
             // viewEmployeeButton
             // 
             this.viewEmployeeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewEmployeeButton.Location = new System.Drawing.Point(229, 496);
+            this.viewEmployeeButton.Location = new System.Drawing.Point(463, 496);
             this.viewEmployeeButton.Name = "viewEmployeeButton";
             this.viewEmployeeButton.Size = new System.Drawing.Size(177, 40);
             this.viewEmployeeButton.TabIndex = 9;
@@ -174,7 +174,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 615);
+            this.ClientSize = new System.Drawing.Size(669, 615);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.viewEmployeeButton);
             this.Controls.Add(this.label2);

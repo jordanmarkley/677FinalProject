@@ -30,6 +30,7 @@ namespace _677FinalProject
             FillList();
         }
 
+        //Accessor for request ID
         public int RequestID
         {
             get
@@ -97,6 +98,7 @@ namespace _677FinalProject
             }
         }
 
+        //Setter for label
         public string EmployeeNameLabel
         {
             set
@@ -105,6 +107,7 @@ namespace _677FinalProject
             }
         }
 
+        //Handler for done button
         private void doneButton_Click(object sender, EventArgs e)
         {
             this.Close();

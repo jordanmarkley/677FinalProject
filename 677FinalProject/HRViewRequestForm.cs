@@ -17,6 +17,7 @@ namespace _677FinalProject
             InitializeComponent();
         }
 
+        //Initializers for labels
         public string RequestIDLabel
         {
             set

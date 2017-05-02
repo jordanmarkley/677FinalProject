@@ -39,12 +39,13 @@
             // exitButton
             // 
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.Location = new System.Drawing.Point(506, 349);
+            this.exitButton.Location = new System.Drawing.Point(660, 346);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(82, 32);
             this.exitButton.TabIndex = 19;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // requestListView
             // 
@@ -57,7 +58,7 @@
             this.requestListView.GridLines = true;
             this.requestListView.Location = new System.Drawing.Point(30, 35);
             this.requestListView.Name = "requestListView";
-            this.requestListView.Size = new System.Drawing.Size(558, 305);
+            this.requestListView.Size = new System.Drawing.Size(712, 305);
             this.requestListView.TabIndex = 18;
             this.requestListView.UseCompatibleStateImageBehavior = false;
             this.requestListView.View = System.Windows.Forms.View.Details;
@@ -86,7 +87,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(621, 409);
+            this.ClientSize = new System.Drawing.Size(775, 409);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.requestListView);
             this.Name = "SupervisorViewRequestForm";

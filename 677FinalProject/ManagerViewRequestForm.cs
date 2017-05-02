@@ -13,7 +13,7 @@ namespace _677FinalProject
 {
     public partial class ManagerViewRequestForm : Form
     {
-
+        //Variables
         private int requestID = 0;
 
         public ManagerViewRequestForm(int rID)

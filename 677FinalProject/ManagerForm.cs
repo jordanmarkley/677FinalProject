@@ -13,6 +13,7 @@ namespace _677FinalProject
 {
     public partial class ManagerForm : Form
     {
+        //Variables
         private int reqID = 0;
 
         public ManagerForm()
@@ -47,6 +48,7 @@ namespace _677FinalProject
             }
         }
 
+        //Initially fill the list view
         private void FillListView()
         {
             List<int> requestID = new List<int>();
@@ -95,6 +97,7 @@ namespace _677FinalProject
             }
         }
 
+        //Refreshes list view
         private void RefreshListViews()
         {
             requestListView.Items.Clear();
@@ -145,6 +148,7 @@ namespace _677FinalProject
             }
         }
 
+        //handler for the log out button
         private void logOutButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you would like to log out?", "Logout", MessageBoxButtons.YesNo);

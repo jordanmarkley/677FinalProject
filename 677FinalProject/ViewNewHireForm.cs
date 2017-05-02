@@ -17,6 +17,7 @@ namespace _677FinalProject
             InitializeComponent();
         }
 
+        //Accessors for labels
         public string EmployeeIDLabel
         {
             set

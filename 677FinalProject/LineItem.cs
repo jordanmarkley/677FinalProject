@@ -16,6 +16,7 @@ namespace _677FinalProject
         private decimal itemPrice;
         private decimal lineTotal;
 
+        //Constructor - 5 parameters
         public LineItem(int rID, int softID, int q, decimal p, decimal t)
         {
             lineItemID = Convert.ToInt32(rID.ToString() + softID.ToString());
@@ -25,6 +26,8 @@ namespace _677FinalProject
             itemPrice = p;
             lineTotal = t;
         }
+
+        //Accessors for variables
         public int LineItemID
         {
             get

@@ -20,6 +20,7 @@ namespace _677FinalProject
             FillListView();
         }
 
+        //Initially fill the list view
         private void FillListView()
         {
             List<int> requestID = new List<int>();
@@ -68,6 +69,7 @@ namespace _677FinalProject
             }
         }
 
+        //Refresh the list view
         private void RefreshListView()
         {
             requestListView.Items.Clear();
@@ -118,6 +120,7 @@ namespace _677FinalProject
             }
         }
 
+        //Handler for the view reqeust button
         private void viewRequestButton_Click(object sender, EventArgs e)
         {
             int requestID = 0;
@@ -135,6 +138,7 @@ namespace _677FinalProject
             }
         }
 
+        //Handler for the log out button
         private void logOutButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you would like to log out?", "Logout", MessageBoxButtons.YesNo);

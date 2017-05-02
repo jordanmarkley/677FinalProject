@@ -101,12 +101,14 @@ namespace _677FinalProject
             
         }
 
+        //Handler for the button click
         private void button1_Click(object sender, EventArgs e)
         {
             RequestForm r = new RequestForm(101);
             r.ShowDialog();
         }
 
+        //loads json file
         private void LoginForm_Load(object sender, EventArgs e)
         {
             //this bit of the code will add the items in the json file retrieved from the AWS to our database
@@ -115,9 +117,9 @@ namespace _677FinalProject
             List<Employee> newguys = new List<Employee>();
 
             //create a newhire to get the newhire information from then assigns the it to the newguys list of employees
-            NewHire theHomies = new NewHire();
-            newguys = theHomies.getJson();
-            theHomies.add(newguys);
+            NewHire newHires = new NewHire();
+            newguys = newHires.getJson();
+            newHires.add(newguys);
         }
     }
 }

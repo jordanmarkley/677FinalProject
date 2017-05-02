@@ -40,7 +40,7 @@ namespace _677FinalProject
             date = d;
         }
 
-        //Constructor
+        //Constructor - 2 parameters
         public Request(int eID, int sID)
         {
             SqlConnection cnn = new SqlConnection();
@@ -65,6 +65,7 @@ namespace _677FinalProject
             date = DateTime.Now.ToString("dd.MM.yyy");
         }
 
+        //Constructor - 3 parameters
         public Request(int rID, int sID, int s)
         {
             reqID = rID;
@@ -72,6 +73,7 @@ namespace _677FinalProject
             status = s;
         }
 
+        //Constructor - 7 parameters
         public Request(int rID, int sID, int eID, decimal sub, decimal tax, decimal price, string d)
         {
             reqID = rID;

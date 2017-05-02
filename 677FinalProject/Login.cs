@@ -87,10 +87,5 @@ namespace _677FinalProject
                 _pword = null;
             }
         }
-
-        public void pushData()
-        {
-
-        }
     }
 }

@@ -54,7 +54,7 @@
             // viewRequestButton
             // 
             this.viewRequestButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewRequestButton.Location = new System.Drawing.Point(239, 312);
+            this.viewRequestButton.Location = new System.Drawing.Point(249, 312);
             this.viewRequestButton.Name = "viewRequestButton";
             this.viewRequestButton.Size = new System.Drawing.Size(119, 50);
             this.viewRequestButton.TabIndex = 6;
@@ -81,7 +81,7 @@
             this.newRequestListView.GridLines = true;
             this.newRequestListView.Location = new System.Drawing.Point(41, 64);
             this.newRequestListView.Name = "newRequestListView";
-            this.newRequestListView.Size = new System.Drawing.Size(120, 242);
+            this.newRequestListView.Size = new System.Drawing.Size(136, 242);
             this.newRequestListView.TabIndex = 4;
             this.newRequestListView.UseCompatibleStateImageBehavior = false;
             this.newRequestListView.View = System.Windows.Forms.View.Details;
@@ -100,7 +100,7 @@
             this.inPogressRequestListView.GridLines = true;
             this.inPogressRequestListView.Location = new System.Drawing.Point(239, 64);
             this.inPogressRequestListView.Name = "inPogressRequestListView";
-            this.inPogressRequestListView.Size = new System.Drawing.Size(119, 242);
+            this.inPogressRequestListView.Size = new System.Drawing.Size(136, 242);
             this.inPogressRequestListView.TabIndex = 8;
             this.inPogressRequestListView.UseCompatibleStateImageBehavior = false;
             this.inPogressRequestListView.View = System.Windows.Forms.View.Details;
@@ -134,7 +134,7 @@
             // completeRequestButton
             // 
             this.completeRequestButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.completeRequestButton.Location = new System.Drawing.Point(41, 312);
+            this.completeRequestButton.Location = new System.Drawing.Point(50, 312);
             this.completeRequestButton.Name = "completeRequestButton";
             this.completeRequestButton.Size = new System.Drawing.Size(120, 50);
             this.completeRequestButton.TabIndex = 11;

@@ -13,6 +13,7 @@ namespace _677FinalProject
 {
     public partial class RequestItemsForm : Form
     {
+        //Variables
         private int requestID;
         private RequestForm requestForm;
 
@@ -25,6 +26,7 @@ namespace _677FinalProject
             requestForm = rForm;
         }
 
+        //Accessor for ID
         public int RequestID
         {
             get
@@ -80,6 +82,7 @@ namespace _677FinalProject
             updateTotals();
         }
 
+        //Handler for submit button
         private void submitButton_Click(object sender, EventArgs e)
         {
             SqlConnection cnn = new SqlConnection();

@@ -17,6 +17,7 @@ namespace _677FinalProject
             InitializeComponent();
         }
 
+        //Accessor for the list view
         public ListView RequestListView
         {
             get
@@ -27,6 +28,12 @@ namespace _677FinalProject
             {
                 requestListView = value;
             }
+        }
+
+        //Handler for exit button
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

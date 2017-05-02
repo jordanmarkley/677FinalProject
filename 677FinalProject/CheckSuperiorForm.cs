@@ -17,11 +17,13 @@ namespace _677FinalProject
             InitializeComponent();
         }
 
+        //Handler for the close button
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        //Gets the supervisor ID and returns it
         public int getSupervisorID()
         {
             int id = Convert.ToInt32(idTextBox.Text);
