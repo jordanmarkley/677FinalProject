@@ -45,7 +45,7 @@
             this.requestListView.GridLines = true;
             this.requestListView.Location = new System.Drawing.Point(28, 31);
             this.requestListView.Name = "requestListView";
-            this.requestListView.Size = new System.Drawing.Size(275, 167);
+            this.requestListView.Size = new System.Drawing.Size(377, 167);
             this.requestListView.TabIndex = 1;
             this.requestListView.UseCompatibleStateImageBehavior = false;
             this.requestListView.View = System.Windows.Forms.View.Details;
@@ -63,7 +63,7 @@
             // viewRequestButton
             // 
             this.viewRequestButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewRequestButton.Location = new System.Drawing.Point(157, 204);
+            this.viewRequestButton.Location = new System.Drawing.Point(259, 204);
             this.viewRequestButton.Name = "viewRequestButton";
             this.viewRequestButton.Size = new System.Drawing.Size(146, 40);
             this.viewRequestButton.TabIndex = 5;
@@ -74,7 +74,7 @@
             // logOutButton
             // 
             this.logOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logOutButton.Location = new System.Drawing.Point(157, 250);
+            this.logOutButton.Location = new System.Drawing.Point(259, 250);
             this.logOutButton.Name = "logOutButton";
             this.logOutButton.Size = new System.Drawing.Size(146, 40);
             this.logOutButton.TabIndex = 6;
@@ -86,7 +86,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(331, 315);
+            this.ClientSize = new System.Drawing.Size(434, 315);
             this.Controls.Add(this.logOutButton);
             this.Controls.Add(this.viewRequestButton);
             this.Controls.Add(this.requestListView);

@@ -53,7 +53,7 @@
             this.requestListView.GridLines = true;
             this.requestListView.Location = new System.Drawing.Point(44, 129);
             this.requestListView.Name = "requestListView";
-            this.requestListView.Size = new System.Drawing.Size(558, 305);
+            this.requestListView.Size = new System.Drawing.Size(709, 305);
             this.requestListView.TabIndex = 3;
             this.requestListView.UseCompatibleStateImageBehavior = false;
             this.requestListView.View = System.Windows.Forms.View.Details;
@@ -92,7 +92,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(145, 82);
+            this.label2.Location = new System.Drawing.Point(40, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 24);
             this.label2.TabIndex = 5;
@@ -121,7 +121,7 @@
             // acceptButton
             // 
             this.acceptButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.acceptButton.Location = new System.Drawing.Point(519, 499);
+            this.acceptButton.Location = new System.Drawing.Point(607, 440);
             this.acceptButton.Name = "acceptButton";
             this.acceptButton.Size = new System.Drawing.Size(146, 40);
             this.acceptButton.TabIndex = 9;
@@ -132,7 +132,7 @@
             // rejectButton
             // 
             this.rejectButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rejectButton.Location = new System.Drawing.Point(367, 499);
+            this.rejectButton.Location = new System.Drawing.Point(455, 440);
             this.rejectButton.Name = "rejectButton";
             this.rejectButton.Size = new System.Drawing.Size(146, 40);
             this.rejectButton.TabIndex = 10;
@@ -143,7 +143,7 @@
             // cancelButton
             // 
             this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelButton.Location = new System.Drawing.Point(215, 499);
+            this.cancelButton.Location = new System.Drawing.Point(303, 440);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(146, 40);
             this.cancelButton.TabIndex = 11;
@@ -155,7 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 569);
+            this.ClientSize = new System.Drawing.Size(796, 503);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.rejectButton);
             this.Controls.Add(this.acceptButton);

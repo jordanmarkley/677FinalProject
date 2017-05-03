@@ -48,9 +48,9 @@
             this.itemsListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.itemsListView.FullRowSelect = true;
             this.itemsListView.GridLines = true;
-            this.itemsListView.Location = new System.Drawing.Point(12, 23);
+            this.itemsListView.Location = new System.Drawing.Point(28, 23);
             this.itemsListView.Name = "itemsListView";
-            this.itemsListView.Size = new System.Drawing.Size(629, 305);
+            this.itemsListView.Size = new System.Drawing.Size(723, 305);
             this.itemsListView.TabIndex = 4;
             this.itemsListView.UseCompatibleStateImageBehavior = false;
             this.itemsListView.View = System.Windows.Forms.View.Details;
@@ -58,7 +58,7 @@
             // Complete
             // 
             this.Complete.Text = "Complete";
-            this.Complete.Width = 91;
+            this.Complete.Width = 80;
             // 
             // id
             // 
@@ -68,7 +68,7 @@
             // desription
             // 
             this.desription.Text = "Description";
-            this.desription.Width = 350;
+            this.desription.Width = 300;
             // 
             // price
             // 
@@ -78,9 +78,9 @@
             // buildItemButton
             // 
             this.buildItemButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buildItemButton.Location = new System.Drawing.Point(495, 342);
+            this.buildItemButton.Location = new System.Drawing.Point(528, 342);
             this.buildItemButton.Name = "buildItemButton";
-            this.buildItemButton.Size = new System.Drawing.Size(146, 40);
+            this.buildItemButton.Size = new System.Drawing.Size(223, 40);
             this.buildItemButton.TabIndex = 18;
             this.buildItemButton.Text = "Build Item";
             this.buildItemButton.UseVisualStyleBackColor = true;
@@ -90,7 +90,7 @@
             // 
             this.confirmRequestButton.Enabled = false;
             this.confirmRequestButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmRequestButton.Location = new System.Drawing.Point(418, 388);
+            this.confirmRequestButton.Location = new System.Drawing.Point(528, 388);
             this.confirmRequestButton.Name = "confirmRequestButton";
             this.confirmRequestButton.Size = new System.Drawing.Size(223, 40);
             this.confirmRequestButton.TabIndex = 19;
@@ -101,9 +101,9 @@
             // closeButton
             // 
             this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeButton.Location = new System.Drawing.Point(495, 434);
+            this.closeButton.Location = new System.Drawing.Point(528, 434);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(146, 40);
+            this.closeButton.Size = new System.Drawing.Size(223, 40);
             this.closeButton.TabIndex = 20;
             this.closeButton.Text = "Close";
             this.closeButton.UseVisualStyleBackColor = true;
@@ -113,7 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(653, 486);
+            this.ClientSize = new System.Drawing.Size(781, 486);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.confirmRequestButton);
             this.Controls.Add(this.buildItemButton);
