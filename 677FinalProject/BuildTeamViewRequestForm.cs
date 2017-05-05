@@ -107,12 +107,15 @@ namespace _677FinalProject
         //Handler for the confirm request button
         private void confirmRequestButton_Click(object sender, EventArgs e)
         {
+            string date = DateTime.Now.ToString("dd.MM.yyyy");
+
             SqlConnection cnn = new SqlConnection();
             DBcnn database = new DBcnn(cnn);
             database.connect(null);
             database.open();
-            SqlCommand reqcmd = new SqlCommand("UPDATE REQUEST SET COUNTER = 4 WHERE REQUEST_ID = @requestID", cnn);
+            SqlCommand reqcmd = new SqlCommand("UPDATE REQUEST SET COUNTER = 4, END_DATE = @date WHERE REQUEST_ID = @requestID", cnn);
             reqcmd.Parameters.AddWithValue("@requestID", requestID);
+            reqcmd.Parameters.AddWithValue("@date", date);
             reqcmd.ExecuteNonQuery();
 
             this.Close();

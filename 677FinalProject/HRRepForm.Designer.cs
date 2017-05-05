@@ -42,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.viewEmployeeButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.metricsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -99,7 +100,7 @@
             // logOutButton
             // 
             this.logOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logOutButton.Location = new System.Drawing.Point(463, 542);
+            this.logOutButton.Location = new System.Drawing.Point(463, 588);
             this.logOutButton.Name = "logOutButton";
             this.logOutButton.Size = new System.Drawing.Size(177, 40);
             this.logOutButton.TabIndex = 6;
@@ -170,11 +171,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // metricsButton
+            // 
+            this.metricsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metricsButton.Location = new System.Drawing.Point(463, 542);
+            this.metricsButton.Name = "metricsButton";
+            this.metricsButton.Size = new System.Drawing.Size(177, 40);
+            this.metricsButton.TabIndex = 11;
+            this.metricsButton.Text = "Metrics";
+            this.metricsButton.UseVisualStyleBackColor = true;
+            this.metricsButton.Click += new System.EventHandler(this.metricsButton_Click);
+            // 
             // HRRepForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(669, 615);
+            this.ClientSize = new System.Drawing.Size(669, 654);
+            this.Controls.Add(this.metricsButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.viewEmployeeButton);
             this.Controls.Add(this.label2);
@@ -206,5 +219,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button viewEmployeeButton;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button metricsButton;
     }
 }

@@ -157,5 +157,22 @@ namespace _677FinalProject
                 this.Close();
             }
         }
+
+        private void metricsButton_Click(object sender, EventArgs e)
+        {
+            Metrics metrics = new Metrics();
+
+            MetricsForm metricsForm = new MetricsForm();
+
+            int numberOustandingBuilds = metrics.GetOutstandingBuilds();
+
+            decimal averageBuildTime = metrics.AverageBuildTime();
+
+            metricsForm.AverageBuildTimeLabel = averageBuildTime.ToString() + " Days";
+
+            metricsForm.OutstandingBuildsLabel = numberOustandingBuilds.ToString();
+
+            metricsForm.Show();
+        }
     }
 }

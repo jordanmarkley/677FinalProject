@@ -62,7 +62,7 @@ namespace _677FinalProject
             empID = eID;
             supID = sID;
             status = 1;
-            date = DateTime.Now.ToString("dd.MM.yyy");
+            date = DateTime.Now.ToString("dd.MM.yyyy");
         }
 
         //Constructor - 3 parameters

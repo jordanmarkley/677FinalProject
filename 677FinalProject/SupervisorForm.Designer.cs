@@ -38,12 +38,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.completeRequestButton = new System.Windows.Forms.Button();
+            this.metricsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // logOutButton
             // 
             this.logOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logOutButton.Location = new System.Drawing.Point(283, 394);
+            this.logOutButton.Location = new System.Drawing.Point(283, 425);
             this.logOutButton.Name = "logOutButton";
             this.logOutButton.Size = new System.Drawing.Size(146, 40);
             this.logOutButton.TabIndex = 7;
@@ -142,11 +143,23 @@
             this.completeRequestButton.UseVisualStyleBackColor = true;
             this.completeRequestButton.Click += new System.EventHandler(this.completeRequestButton_Click);
             // 
+            // metricsButton
+            // 
+            this.metricsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metricsButton.Location = new System.Drawing.Point(283, 379);
+            this.metricsButton.Name = "metricsButton";
+            this.metricsButton.Size = new System.Drawing.Size(146, 40);
+            this.metricsButton.TabIndex = 13;
+            this.metricsButton.Text = "Metrics";
+            this.metricsButton.UseVisualStyleBackColor = true;
+            this.metricsButton.Click += new System.EventHandler(this.metricsButton_Click);
+            // 
             // SupervisorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(459, 453);
+            this.ClientSize = new System.Drawing.Size(459, 478);
+            this.Controls.Add(this.metricsButton);
             this.Controls.Add(this.completeRequestButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -174,5 +187,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button completeRequestButton;
+        private System.Windows.Forms.Button metricsButton;
     }
 }

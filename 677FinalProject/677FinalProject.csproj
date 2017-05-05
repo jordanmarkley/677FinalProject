@@ -97,6 +97,13 @@
     <Compile Include="ManagerViewRequestForm.Designer.cs">
       <DependentUpon>ManagerViewRequestForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Metrics.cs" />
+    <Compile Include="MetricsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MetricsForm.Designer.cs">
+      <DependentUpon>MetricsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewHire.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -156,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerViewRequestForm.resx">
       <DependentUpon>ManagerViewRequestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MetricsForm.resx">
+      <DependentUpon>MetricsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
