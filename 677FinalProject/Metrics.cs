@@ -23,6 +23,7 @@ namespace _677FinalProject
             }
         }
 
+        //Retreives all the outstanding builds in the requests not yet completed
         public int GetOutstandingBuilds()
         {
             int requestID = 0;
@@ -73,6 +74,7 @@ namespace _677FinalProject
             return numberOutstandingBuilds;
         }
 
+        //Calculates the average build time of the requests that are already complete
         public decimal AverageBuildTime()
         {
             int requestID = 0;
